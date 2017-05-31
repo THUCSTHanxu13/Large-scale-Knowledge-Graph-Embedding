@@ -1,0 +1,107 @@
+\begin{thebibliography}{15}
+\bibpunct{[}{]}{,}{s}{,}{,}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname thumasterbib\endcsname\relax
+  \providecommand\thumasterbib{D}\fi
+\expandafter\ifx\csname thuphdbib\endcsname\relax
+  \providecommand\thuphdbib{D}\fi
+
+\bibitem[Miller(1995)]{miller1995wordnet}
+Miller G A.
+\newblock Wordnet: a lexical database for english\allowbreak[J].
+\newblock Communications of the ACM, 1995.
+
+\bibitem[Hoffart\ et~al.(2013)Hoffart, Suchanek, Berberich, and
+  Weikum]{hoffart2013yago2}
+Hoffart J, Suchanek F M, Berberich K, et~al.
+\newblock Yago2: A spatially and temporally enhanced knowledge base from
+  wikipedia\allowbreak[J].
+\newblock Proceedings of Artificial Intelligence, 2013.
+
+\bibitem[Auer\ et~al.(2007)Auer, Bizer, Kobilarov, Lehmann, Cyganiak, and
+  Ives]{auer2007dbpedia}
+Auer S, Bizer C, Kobilarov G, et~al.
+\newblock Dbpedia: A nucleus for a web of open
+  data\allowbreak[M]//\allowbreak{}Proceedings of the semantic web.
+\newblock [S.l.: s.n.], 2007
+
+\bibitem[Bollacker\ et~al.(2008)Bollacker, Evans, Paritosh, Sturge, and
+  Taylor]{bollacker2008freebase}
+Bollacker K, Evans C, Paritosh P, et~al.
+\newblock Freebase: a collaboratively created graph database for structuring
+  human knowledge\allowbreak[C]//\allowbreak{}Proceedings of KDD.
+\newblock [S.l.: s.n.], 2008.
+
+\bibitem[Vrande{\v{c}}i{\'c}\ et~al.(2014)Vrande{\v{c}}i{\'c} and
+  Kr{\"o}tzsch]{vrandevcic2014wikidata}
+Vrande{\v{c}}i{\'c} D, Kr{\"o}tzsch M.
+\newblock Wikidata: a free collaborative knowledgebase\allowbreak[J].
+\newblock Communications of the ACM, 2014.
+
+\bibitem[Dong\ et~al.(2014)Dong, Gabrilovich, Heitz, Horn, Lao, Murphy,
+  Strohmann, Sun, and Zhang]{dong2014knowledge}
+Dong X, Gabrilovich E, Heitz G, et~al.
+\newblock Knowledge vault: A web-scale approach to probabilistic knowledge
+  fusion\allowbreak[C]//\allowbreak{}Proceedings of SIGKDD.
+\newblock [S.l.: s.n.], 2014.
+
+\bibitem[Bordes\ et~al.(2013)Bordes, Usunier, Garcia-Duran, Weston, and
+  Yakhnenko]{bordes2013translating}
+Bordes A, Usunier N, Garcia-Duran A, et~al.
+\newblock Translating embeddings for modeling multi-relational
+  data\allowbreak[C]//\allowbreak{}Proceedings of NIPS.
+\newblock [S.l.: s.n.], 2013.
+
+\bibitem[Wang\ et~al.(2014)Wang, Zhang, Feng, and Chen]{wang2014transh}
+Wang Z, Zhang J, Feng J, et~al.
+\newblock Knowledge graph embedding by translating on
+  hyperplanes\allowbreak[C]//\allowbreak{}Proceedings of AAAI.
+\newblock [S.l.: s.n.], 2014.
+
+\bibitem[Lin\ et~al.(2015)Lin, Liu, Sun, Liu, and Zhu]{lin2015learning}
+Lin Y, Liu Z, Sun M, et~al.
+\newblock Learning entity and relation embeddings for knowledge graph
+  completion\allowbreak[C]//\allowbreak{}Proceedings of AAAI.
+\newblock [S.l.: s.n.], 2015.
+
+\bibitem[Ji\ et~al.(2015)Ji, He, Xu, Liu, and Zhao]{ji2015knowledge}
+Ji G, He S, Xu L, et~al.
+\newblock Knowledge graph embedding via dynamic mapping
+  matrix\allowbreak[C]//\allowbreak{}Proceedings of ACL.
+\newblock [S.l.: s.n.], 2015.
+
+\bibitem[Lin\ et~al.(2016{\natexlab{a}})Lin, Liu, and Sun]{Lin2016Knowledge}
+Lin Y, Liu Z, Sun M.
+\newblock Knowledge representation learning with entities, attributes and
+  relations\allowbreak[J].
+\newblock Proceedings of IJCAI, 2016{\natexlab{a}}.
+
+\bibitem[Zeng\ et~al.(2014)Zeng, Liu, Lai, Zhou, and Zhao]{zeng2014relation}
+Zeng D, Liu K, Lai S, et~al.
+\newblock Relation classification via convolutional deep neural
+  network\allowbreak[C]//\allowbreak{}Proceedings of COLING.
+\newblock [S.l.: s.n.], 2014.
+
+\bibitem[Toutanova\ et~al.(2015)Toutanova, Chen, Pantel, Poon, Choudhury, and
+  Gamon]{toutanova2015representing}
+Toutanova K, Chen D, Pantel P, et~al.
+\newblock Representing text for joint embedding of text and knowledge
+  bases.\allowbreak[C]//\allowbreak{}Proceedings of EMNLP.
+\newblock [S.l.: s.n.], 2015.
+
+\bibitem[Lin\ et~al.(2016{\natexlab{b}})Lin, Shen, Liu, Luan, and
+  Sun]{lin2016neural}
+Lin Y, Shen S, Liu Z, et~al.
+\newblock Neural relation extraction with selective attention over
+  instances\allowbreak[C]//\allowbreak{}Proceedings of ACL.
+\newblock [S.l.: s.n.], 2016{\natexlab{b}}.
+
+\bibitem[Mikolov\ et~al.(2013)Mikolov, Chen, Corrado, and
+  Dean]{mikolov2013efficient}
+Mikolov T, Chen K, Corrado G, et~al.
+\newblock Efficient estimation of word representations in vector
+  space\allowbreak[J].
+\newblock Proceedings of ICLR, 2013.
+
+\end{thebibliography}

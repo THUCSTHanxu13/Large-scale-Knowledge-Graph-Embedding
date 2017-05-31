@@ -1,0 +1,99 @@
+
+
+
+
+\section{摘要}
+
+知识图谱填充是一个预测知识图谱实体间链接关系类型的任务。在本篇论文中，我们提出了一个知识图谱嵌入的算法来解决这个问题。在最近的研究中，诸如 TransE 和 TransR 这样的模型将关系作为头实体到尾实体之间的转移来对知识图谱进行嵌入。通常，这类算法会将实体和关系在同一个连续空间中进行嵌入。实际上，一个实体可能有多个方面，即在不同关系下拥有不同的意义，这使得在一个统一的空间中建模变的很困难。在本文中，我们提出了叫作 TransR 的模型来将实体和关系在不同空间中嵌入。然后，在这个模型中我们再学习实体空间和关系空间的映射关系，从而将实体从实体空间映射到关系空间中来构建头实体到尾实体之间的转移。在试验中，我们在三个任务上评测了我们的模型，包括链接预测，三元组分类和关系现实抽取。实验结果和之前最好的模型相比有显著的提升，这些模型中包括 TransE 和 TransH。这篇论文的源代码被我们公布在 https://github.com/mrlyk423/relation_extractio 上。
+
+
+\section{介绍}
+
+	\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{figures/trans/model_idea}
+	\caption{Simple illustration of TransR.}
+	\label{fig_1:idea}
+	\end{figure}
+
+知识图谱可以将实体和实体间丰富的关系信息进行结构化。尽管一个经典的知识图谱可能含有数百万个实体和数以亿个关系事实，这个图谱离完善还差的很远。知识图谱填充这个任务就是为了在已有图谱信息的监督下进行学习并能够预测实体间的未知关系。这个任务可以推理出新的关系事实，从而也对从自由文本中进行关系抽取有很重要的作用。
+
+知识图谱填充和社交网络中的链接预测非常相似，但是更具有挑战性，主要原因有以下几点：（1）知识图谱中的节点代表的实体通常具有不同的关系与属性；（2）知识图谱中的边代表的关系也是有不同类型的。对于知识图谱填充，我们不仅需要知道实体之间是否有关系还要知道这个关系是哪种具体的类型。
+
+因为这个原因，传统的用来做链接预测的方法对于图谱填充是不适用的。最近，一个极有发展潜力的模型被提出用来将知识图谱嵌入到一个连续的向量空间中同时在空间中保持图的特性。紧跟着这个工作，大量的方法被尝试和提出，这个我们将会在``相关工作''章节细节阐述。
+
+在这些方法中，TransE \cite{bordes2013translating} 和 TransH \cite{wang2014knowledge} 最为简洁有效，并且取得了最好的预测效果。受 \cite{mikolov2013distributed} 的启发，TransE 将实体和关系都嵌入为空间中的向量。这些向量的维度为 $\mathbb{R}^k$，我们也用加粗的符号来代表对应的向量。Trans 最基本的想法就是将实体之间的关系对应到实体向量间的转移，即知识图谱中的三元组$(h, r, t)$，我们有$\mathbf{h} + \mathbf{r} \approx \mathbf{t}$。因为 TransE 对于 1-to-N、N-to-1、N-to-N 的关系建模有一定的问题，TransH 被提出以便将实体在不同的关系下拥有不同的表示从而适应这种非一对一的关系。
+
+无论是 TransE 还是 TransH 都将实体和关系嵌入到同一个$\mathbb{R}^k$的空间中去。但是，我们之前说到的，一个实体在不同的关系下是有所区别的。因此，有这样一个显而易见的现象，相似的实体会在空间上非常接近，但是在不同的关系背景下我们又希望它们有区分性，即距离上要相互远离，这两者在同一个空间中是矛盾的。为了解决这个问题，我们提出了一个新的方法，将实体和关系在各自的空间中进行嵌入，例如实体在一个实体空间中，不同类型的关系在不同的关系空间中，并且要构建一个映射机制能够将实体从实体空间映射到不同的关系空间中去，我们将这个方法命名为 TransR。
+
+TransR 的基础想法如图\ref{fig_1:idea}所示。对于一个给定的三元组$(h, r, t)$，实体首先从实体空间被映射到关系$r$所在的关系空间中去成为$h_r$和$t_r$，映射为$M_r$，然后有$\mathbf{h}_r + \mathbf{r} \approx \mathbf{t}_r$。通过这样的一种映射，我们可以使得头尾实体能够在空间中具有相似性，而在不同的关系中又有不同的空间表现。
+
+更进一步，即使在同一个类型的关系下，实体间的潜在关联也是具有多样性的。所以即使对于每一个关系都构建一个向量也是不够的。举个例子，头尾之间的关系``行政区划覆盖''可能具有很多中关系模式，比如``国家-城市''、``国家-大学''、``洲-国家''等等。受到分段线性回归 \cite{ritzema1994drainage} 的启发，我们通过将头尾实体间的潜在关系进行聚类，并为每一个聚类的簇单独建立向量表示的方法进一步拓展了TransR，并且命名为 CTransR。
+ 
+我们在三个任务上评测了我们的模型，包括链接预测，三元组分类和关系现实抽取，数据也是从WordNet和Freebase中抽取出专门用来做性能评测的标准数据集。实验结果和之前最好的模型相比有显著的提升，体现了我们模型的有效性。
+
+
+
+
+
+
+
+
+
+	\subsection{Related Models}
+
+		\subsubsection{TransE and TransH}
+		As mentioned in Section ``Introduction'', TransE \cite{bordes2013translating} wants $\mathbf{h} + \mathbf{r} \approx \mathbf{t}$ when $(h, r, t)$ holds. This indicates that $(\mathbf{t})$ should be the nearest neighbor of $(\mathbf{h} + \mathbf{r})$. Hence, TransE assumes the score function
+		\begin{equation}
+		f_{r}(h, t) = \|\mathbf{h} + \mathbf{r} - \mathbf{t}\|_{2}^{2}
+		\end{equation}
+		is low if $(h, r, t)$ holds, and high otherwise.
+
+		TransE applies well to 1-to-1 relations but has issues for N-to-1, 1-to-N and N-to-N relations. Take a 1-to-N relation $r$ for example. $\forall i \in \{0, \ldots, m\}, (h_i, r, t) \in S$. This indicates that $\mathbf{h}_0 = \ldots = \mathbf{h}_m$, which does not comport with the facts.
+
+		To address the issue of TransE when modeling N-to-1, 1-to-N and N-to-N relations, TransH \cite{wang2014knowledge} is proposed to enable an entity to have distinct distributed representations when involved in different relations. For a relation $r$, TransH models the relation as a vector $\mathbf{r}$ on a hyperplane with $\mathbf{w}_r$ as the normal vector. For a triple $(h, r, t)$, the entity embeddings $\mathbf{h}$ and $\mathbf{t}$ are first projected to the hyperplane of $\mathbf{w}_r$, denoted as $\mathbf{h}_{\bot}$ and $\mathbf{t}_{\bot}$. Then the score function is defined as
+		\begin{equation}
+		f_{r}(h, t) = \|\mathbf{h}_{\bot} + \mathbf{r} - \mathbf{t}_{\bot}\|_{2}^{2}.
+		\end{equation}
+		If we restrict $\|\mathbf{w}_r\|_{2} = 1$, we will have $\mathbf{h}_{\bot} = \mathbf{h} - \mathbf{w}_{r}^{\top}\mathbf{h}\mathbf{w}_{r}$ and $\mathbf{t}_{\bot} = \mathbf{t} - \mathbf{w}_{r}^{\top}\mathbf{t}\mathbf{w}_{r}$. By projecting entity embeddings into relation hyperplanes, it allows entities playing different roles in different relations.
+
+		\subsubsection{Other Models}
+		Besides TransE and TransH, there are also many other methods following the approaches of knowledge graph embedding. Here we introduce several typical models, which will also be compared as baselines with our models in experiments.
+
+		\textbf{Unstructured Model (UM).} UM model \cite{bordes2012joint,bordes2014semantic} was proposed as a naive version of TransE by assigning all $\mathbf{r} = \mathbf{0}$, leading to score function $f_r(h, t) =  \|\mathbf{h} - \mathbf{t}\|_{2}^{2}$. This model cannot consider differences of relations.
+
+		\textbf{Structured Embedding (SE).} SE model \cite{bordes2011learning} designs two relation-specific matrices for head and tail entities, i.e., $\mathbf{M}_{r, 1}$ and $\mathbf{M}_{r, 2}$, and defines the score function as an $L_1$ distance between two projected vectors, i.e., $f_r(h, t) =  \| \mathbf{M}_{r, 1} \mathbf{h} - \mathbf{M}_{r, 2} \mathbf{t} \|_1$. Since the model has two separate matrices for optimization, it cannot capture precise relations between entities and relations.
+
+		\textbf{Single Layer Model (SLM).} SLM model was proposed as a naive baseline of NTN \cite{socher2013reasoning}. The score function of SLM model is defined as
+		\begin{equation}
+		f_{r}(h, t) = \mathbf{u}_r^\top g (\mathbf{M}_{r, 1} \mathbf{h} + \mathbf{M}_{r, 2} \mathbf{t}),
+		\end{equation}
+		where $\mathbf{M}_{r, 1}$ and $\mathbf{M}_{r, 2}$ are weight matrices, and $g()$ is the \texttt{tanh} operation. SLM is a special case of NTN when the tensor in NTN is set to $\mathbf{0}$.
+
+		\textbf{Semantic Matching Energy (SME).} SME model \cite{bordes2012joint,bordes2014semantic} aims to capture correlations between entities and relations via multiple matrix products and Hadamard product. SME model simply represents each relation using a single vector, which interacts with entity vectors via linear matrix products, with all relations share the same parameters. SME considers two definitions of semantic matching energy functions for optimization, including the linear form
+		\begin{equation}
+		f_r(h, t) = (\mathbf{M}_{1} \mathbf{h} + \mathbf{M}_{2} \mathbf{r} + \mathbf{b}_1 )^{\top} (\mathbf{M}_{3} \mathbf{t} + \mathbf{M}_{4} \mathbf{r} + \mathbf{b}_2),
+		\end{equation}
+		and the bilinear form
+		\begin{equation}
+		f_r(h, t) = \big( (\mathbf{M}_{1} \mathbf{h}) \otimes (\mathbf{M}_{2} \mathbf{r}) + \mathbf{b}_1 \big)^{\top} \big( (\mathbf{M}_{3} \mathbf{t}) \otimes (\mathbf{M}_{4} \mathbf{r}) + \mathbf{b}_2 \big),
+		\end{equation}
+		where $\mathbf{M}_{1}$, $\mathbf{M}_{2}$, $\mathbf{M}_{3}$ and $\mathbf{M}_{4}$ are weight matrices, $\otimes$ is the Hadamard product, $\mathbf{b}_1$ and $\mathbf{b}_2$ are bias vectors. In \cite{bordes2014semantic}, the bilinear form of SME is re-defined with $3$-way tensors instead of matrices.
+
+		\textbf{Latent Factor Model (LFM).} LFM model \cite{jenatton2012latent,sutskever2009modelling} considers second-order correlations between entity embeddings using a quadratic form,  and defines a bilinear score function $f_r(h, t) = \mathbf{h}^{\top}\mathbf{M}_r\mathbf{t}$.
+
+		\textbf{Neural Tensor Network (NTN).} NTN model \cite{socher2013reasoning} defines an expressive score function for graph embedding as follows,
+		\begin{equation}
+		f_{r}(h, t) = \mathbf{u}_r^\top g (\mathbf{h}^{\top} \mathbf{M}_r \mathbf{t} + \mathbf{M}_{r, 1} \mathbf{h} + \mathbf{M}_{r, 2}\mathbf{t} + \mathbf{b}_r),
+		\end{equation}
+		where $\mathbf{u}_r$ is a relation-specific linear layer, $g()$ is the \texttt{tanh} operation, $\mathbf{M}_r \in \mathbb{R}^{d \times d \times k}$ is a $3$-way tensor, and $\mathbf{M}_{r, 1}, \mathbf{M}_{r, 2} \in  \mathbb{R}^{k\times d}$ are weight matrices. Meanwhile, the corresponding high complexity of NTN may prevent it from efficiently applying on large-scale knowledge graphs.
+
+		In experiments we will also compare with \textbf{RESCAL}, a collective matrix factorization model presented in \cite{nickel2011three,nickel2012factorizing}.
+
+
+
+
+
+
+
+

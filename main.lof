@@ -1,0 +1,7 @@
+\contentsline {figure}{\numberline {1.1}{\ignorespaces 一些常用的大规模知识图谱\cite {bollacker2008freebase,auer2007dbpedia,hoffart2013yago2,miller1995wordnet,vrandevcic2014wikidata}\relax }}{2}{figure.caption.10}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 基于并行的大规模知识图谱表示学习框架 OpenKE 的结构示意图\relax }}{4}{figure.caption.11}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 在不同线程设定下，TransE 在 FB15K 上的损失函数走向\relax }}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 在不同线程设定下，OpenKE 下不同模型的加速比曲线\relax }}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 基于并行的知识图谱与文本模型联合学习框架\relax }}{16}{figure.caption.15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 基于知识注意力机制的卷积神经网络模型\relax }}{20}{figure.caption.16}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 卷积层和池化层的结构示意图\relax }}{21}{figure.caption.17}
