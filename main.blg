@@ -4,48 +4,49 @@ The top-level auxiliary file: main.aux
 A level-1 auxiliary file: data/chap01.aux
 A level-1 auxiliary file: data/chap02.aux
 A level-1 auxiliary file: data/chap03.aux
-The style file: thuthesis-numerical.bst
+The style file: thuthesis.bst
 A level-1 auxiliary file: data/ack.aux
 Database file #1: ref/refs.bib
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 15 entries,
-            3337 wiz_defined-function locations,
-            826 strings with 8283 characters,
-and the built_in function-call counts, 48106 in all, are:
-= -- 779
-> -- 6629
-< -- 4382
-+ -- 2387
-- -- 141
-* -- 494
-:= -- 5475
-add.period$ -- 44
-call.type$ -- 15
-change.case$ -- 30
-chr.to.int$ -- 2094
-cite$ -- 15
-duplicate$ -- 4490
-empty$ -- 700
-format.name$ -- 168
-if$ -- 10428
-int.to.chr$ -- 2
-int.to.str$ -- 16
-missing$ -- 0
-newline$ -- 85
-num.names$ -- 45
-pop$ -- 2221
+Warning--I didn't find a database entry for "ji2016knowledge"
+You've used 43 entries,
+            2299 wiz_defined-function locations,
+            689 strings with 10399 characters,
+and the built_in function-call counts, 21960 in all, are:
+= -- 2131
+> -- 642
+< -- 9
++ -- 300
+- -- 150
+* -- 1620
+:= -- 2916
+add.period$ -- 99
+call.type$ -- 43
+change.case$ -- 42
+chr.to.int$ -- 0
+cite$ -- 43
+duplicate$ -- 1707
+empty$ -- 2331
+format.name$ -- 192
+if$ -- 5049
+int.to.chr$ -- 0
+int.to.str$ -- 43
+missing$ -- 44
+newline$ -- 270
+num.names$ -- 43
+pop$ -- 257
 preamble$ -- 1
-purify$ -- 15
+purify$ -- 0
 quote$ -- 0
-skip$ -- 4624
+skip$ -- 427
 stack$ -- 0
-substring$ -- 2290
-swap$ -- 17
-text.length$ -- 45
+substring$ -- 2704
+swap$ -- 125
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 185
+type$ -- 0
 warning$ -- 0
-while$ -- 75
-width$ -- 0
-write$ -- 214
+while$ -- 224
+width$ -- 45
+write$ -- 494
+(There was 1 warning)

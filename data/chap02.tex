@@ -1,41 +1,27 @@
 \chapter{基于并行的大规模知识图谱表示学习框架}
-\label{cha:framework}
+\label{cha2:framework}
 
-\section{简介}
+\section{章节引言}
 
-% 正如我们之前提到
+如前文所述，人们构建出各类大型知识图，用以将世界中各种知识以结构化形式组织起来，典型的就是语言知识图谱 WordNet \cite{miller1995wordnet}，通用知识图谱 Freebase \cite{bollacker2008freebase}。知识图谱中的事实通常以关系三元组的形式存在，如$(h, r, t)$，$h$和$t$表示\emph{头}实体和\emph{尾}实体，$r$表示$h$和$t$之间的\emph{关系}。例如（\emph{莎士比亚}，\emph{国籍}，\emph{英国}），刻画的就是莎士比亚是一个英国人。经过业界长时间的构建和整理，现有知识图谱中的信息已经初具规模且结构清晰，可用于帮助各种应用程序来获得更强力的性能，诸如问答系统和网页搜索应用。
 
-% % Knowledge graphs (KGs) are playing an important role in many applications such as question answering and web search. These applications require embeddings of entities and relations in KGs for efficient compution. A variety of effective methods have been proposed to embed KGs into continuous low-dimensional spaces. The implementations of these methods have been verified on small KGs, but not fast enough to embed large-scale KGs. To alleviate this issue, we present OpenKE, an efficient implementation framework for knowledge graph embedding via multi- threading training and some algorithmic design optimizations for acceleration. The evaluation results show that our frame- work can significantly improve embedding efficiency with comparable performance. We also provide embeddings of the exist- ing large-scale KGs, including Freebase and Wikidata, learned by our framework, which can be directly used for relevant ap- plications. Our toolkits and embeddings are released on our website 1.
+为了将知识图谱纳入到这些应用程序中去，我们需要将实体和关系嵌入到低维空间中以向量形式作为输入。与此同时，虽然大多数现有的知识图谱规模都很庞大，但是它们离完善还差的很远。近年来的工作中，图谱填充的主要方法也是将知识图谱嵌入到低维空间进行信息推理和抽取。出于这些需求，大量的知识图谱表示学习方法被提出，并试图用合理的方式将实体和关系在网络结构上的组成嵌入到连续的低维空间中。比较有代表性的算法有基于图结构的模型\cite{lao2010relational,lao2011random}，基于张量的模型\cite{socher2013reasoning, nickel2016holographic}，基于平移的模型\cite{bordes2013translating,ji2015knowledge,ji2016knowledge}。TransE \cite{bordes2013translating}是一个典型的基于平移的模型，它将每个事实$(h,r,t)$中的关系$r$视为空间中$h$到$t$的向量平移，即$\textbf{h} + \textbf{r} = \textbf{t}$。因为TransE是一种具有良好性能且高效的方法，之后有大量的拓展模型出现，代表包括TransH \cite{wang2014transh}，TransR \cite{lin2015learning}以及TransD \cite{ji2015knowledge}。
 
 
-% People construct various large-scale knowledge graphs (KGs) to organize structural knowledge about the world, such as WordNet \cite{miller1995wordnet}, Freebase \cite{bollacker2008freebase} and Wikidata \cite{vrandevcic2014wikidata}. These typical KGs are often organized in the format of multiple relational directed graphs. Nodes in KGs are corresponding to entities, and edges in KGs are corresponding to relations between these entities. Hence, the facts in KGs are usually recorded as a set of relational triples ($h$, $r$, $t$) with $h$ and $t$ indicating \emph{head} and \emph{tail} entities and $r$ indicating the relation between $h$ and $t$, e.g., (\emph{Mark Twain}, \texttt{PlaceOfBirth}, \emph{Florida}). After a long time of constructing and collating, information in the existing KGs is structural and clear, which can be used to help various applications get better performance, such as question answering and web search.
 
-% \begin{figure*}[t]
-% \centering
-% \includegraphics[width=0.9\linewidth]{3.jpg}
-% \caption{The overall framework of OpenKE}
-% \label{fig:joinglearning}
-% \end{figure*}
+% 虽然这些翻译模型在小型基准数据集上取得了很好的成绩，但是这些模型的现有实现通常是单线程的，而且对于训练来说非常耗时，这对于嵌入大规模的KG来说是不太好的。为了学习大规模知识图嵌入，我们提出了一些优化方法。我们工作的优化方法有三个方面。首先，我们设计一个统一的框架来加速TransE及其扩展。该框架将KG整体分为几个部分，并采用这些模型进行多线程训练。我们还提出了基于偏移的负采样来替代原始负采样算法。新的采样机制可以合并算术运算以加速。其次，对于某些具体的模型，我们还通过TensorFlow \ Abite2016TensorFlow}来实现它们，基于我们的框架构建一个方便的平台来运行GPU上的模型\ footnote {https://github.com/thunlp/TensorFlow-TransX}。第三，除了工具包，我们还通过这个框架提供了大型KG的预先训练的嵌入。嵌入可以直接用于其他作品。
 
-% To incorporate KGs into these applications, we need to embed entities and relations as input. Meanwhile, though most existing KGs are large, they are far from completion, which is also partially solved by embedding KGs recently. Thus, a variety of representative approaches have been proposed to encode entities and relations into a continuous low-dimensional space based on the network structure of KGs, such as graph-based models \cite{lao2010relational,lao2011random}, tensor-based models \cite{socher2013reasoning, nickel2016holographic} and translating models \cite{bordes2013translating,ji2015knowledge,ji2016knowledge}. TransE \cite{bordes2013translating} is a typical translating models, which regards the relation $r$ in each fact ($h$, $r$, $t$) as a translation from $h$ to $t$ within the low-dimensional space, i.e., $\textbf{h} + \textbf{r} = \textbf{t}$. Because TransE is an effective and efficient method that possesses good performance, it has many extensions, including TransH \cite{wang2014transh}, TransR \cite{lin2015learning}, TransD \cite{ji2015knowledge}, etc. 
 
 % Although these translating models have achieved great results on small benchmark datasets, the existing implementations of these models are often single-thread and very time-consuming for training, which can not work well for embedding large-scale KGs. To learn large-scale knowledge graph embeddings, we propose some optimization methods. The optimization methods of our works are threefold. First, we design a unified framework to accelerate TransE and its extensions. The framework separates the overall KG into several parts and adopts these models for multi-threading training. We also propose the offset-based negative sampling to replace origin negative sampling algorithms in this framework. The new sampling mechanism can merge arithmetic operations for acceleration. Second, for some specific models, we also implement them by TensorFlow \cite{Abadi2016TensorFlow} based on our framework to build a convenient platform to run models on GPUs \footnote{https://github.com/thunlp/TensorFlow-TransX}. Third, besides the toolkits, we also provide pre-trained embeddings of large-scale KGs by this framework. The embeddings can be used directly for other works.
 
 % We name our works as OpenKE. The experiment results show that OpenKE achieves great speedup ratio without harming the accuracy and efficient enough to learn large-scale KGs.
 
 
+\section{相关工作}
 
-
-
-% \section{相关工作}
-
-% 知识表示学习的代表模型主要包括距离模型、
-% 双线性模型、神经张量模型、矩阵分解模型、翻译 模型等。
-
+    \subsection{早期的表示模型}
   
-%     \subsection{早期的表示模型}
-  
-%     \subsection{基于张量的表示模型}
+    \subsection{基于张量的表示模型}
 %       \subsubsection{RESACL}
 %       \subsubsection{NTN}
 %       \subsubsection{Hole}
@@ -49,14 +35,14 @@
 
 \section{算法框架}
 
-在这一章节内容里，我们主要介绍我们设计出的开放式知识图谱嵌入结构 OpenKE。内容包括 OpenKE 在并行模式下实现的大规模知识图谱表示学习框架，以及已有的知识图谱模型在框架 OpenKE 下进行实现和融合的具体方式和实施细节。整体的模型骨架我们可以在图\ref{fig:openke}中看到。在整个框架中，底层操作和上层模型是独立的，上层模型可以自由选择和适配，而底层结构则是我们进行了大量优化之后的并行架构。进一步讲，这样一个解耦合的框架使得一个新提出的模型也可以在无需过多关注底层的情况下得到高效实现，具有高自由度和高效率的特点，这些都将在之后的内容里详细铺开。当然，在介绍具体细节之前，我们先引入一些符号体系和重要概念。
+在这一章节内容里，我们主要介绍我们设计出的开放式知识图谱嵌入结构 OpenKE。内容包括 OpenKE 在并行模式下实现的大规模知识图谱表示学习框架，以及已有的知识图谱模型在框架 OpenKE 下进行实现和融合的具体方式和实施细节。整体的模型骨架我们可以在图\ref{fig2:openke}中看到。在整个框架中，底层操作和上层模型是独立的，上层模型可以自由选择和适配，而底层结构则是我们进行了大量优化之后的并行架构。进一步讲，这样一个解耦合的框架使得一个新提出的模型也可以在无需过多关注底层的情况下得到高效实现，具有高自由度和高效率的特点，这些都将在之后的内容里详细铺开。当然，在介绍具体细节之前，我们先引入一些符号体系和重要概念。
 
 
 \begin{figure*}[h]
 \centering
 \includegraphics[width=1.0\linewidth]{figures/ch2/3.jpg}
 \caption{基于并行的大规模知识图谱表示学习框架 OpenKE 的结构示意图}
-\label{fig:openke}
+\label{fig2:openke}
 \end{figure*}
 
 \subsection{符号体系和重要概念}
@@ -71,12 +57,12 @@
 
 对于包括 TransE 及其一系列的拓展模型在内的基于平移的知识图谱表示模型，会定义一个潜在的向量表示$r_{ht}$来具象化头实体和尾实体$(h, t)$之间的潜在关系。这些模型之所以叫做基于平移的表示模型，是因为它们都遵循``关系在空间中是实体向量间的平移变换''这个基本假设。在这个假设下，如果三元组成立，那么会有潜在向量$\textbf{r}_{ht}$和显式的关系向量$\textbf{r}$在空间上极为接近。换句话说，我们获取头实体和尾实体之间关系的过程，就是一个寻找与潜在关系向量$\textbf{r}_{ht}$在空间上最近的关系向量的过程，由此我们将能量函数定义为两者的空间距离：
 \begin{align}
-\label{eq:energy functions}
+\label{eq2:energy functions}
 S(h, r, t) & = \lVert \textbf{r} -  \textbf{r}_{ht} \rVert_{L1/L2}
 \end{align}
 这里，能量函数$S(h, r, t)$可以用L1距离衡量，也可以用L2距离衡量。在能量函数的基础上，我们可以进一步得到一个基于边界值优化的损失函数来作为我们的训练目标，并有如下公式：
 \begin{align}
-\label{eq:loss}
+\label{eq2:loss}
 & \mathcal{L}(G) = \sum_{(h,r,t) \in T} \sum_{(h',r,t')\in T'} \big[ \gamma + S(h,r,t) - S(h', r, t') \big]_{+}
 \end{align}
 这里，$[x]_{+}$是这样一个函数，如果$x$是正数的话，那么返回值就是$x$，反之返回值为$0$。$\gamma > 0$是一个边界值，用来约束损失函数的训练。$S(h, r, t)$是正例三元组的能量函数得分，而$S(h', r, t')$是负例三元组的能量函数得分，$T'$是负例三元组的集合。这样的损失函数表明，我们希望正确的三元组和负例三元组的能量函数尽可能拉开差距，但又不能使训练过拟合，所以选定一个边界值并在其范围内进行最大化区分度的训练，这也是这些模型一脉相承的设计思路。而对于负例三元组集合$T'$有：
@@ -87,40 +73,64 @@ T' = \{(h',r,t)\}  \cup \{(h,r,t')\},
 
 在有了上述统一的损失函数和训练方法之后，我们可以基于几乎相同的边界值训练模式在我们的框架中来实现 TransE \cite{bordes2013translating}、TransH \cite{wang2014transh}、TransR \cite{lin2015learning}、TransD \cite{ji2015knowledge} 等诸多模型。这些模型主要的区别在于它们潜在关系向量$\textbf{r}_{ht}$计算方式的不同，其余部分和上述模型归纳一致。对于这些模型之间的区别和变化，我们接下来将详细罗列并介绍。
 
-\textbf{TransE.} 在 TransE 中，对于每个三元组$(h, r, t)$，我们定义出以下的潜在关系向量$\textbf{r}_{ht}$和能量函数$S(h,r,t)$：
-\begin{align}
-&\textbf{r}_{ht} = \textbf{t} - \textbf{h},  \\\nonumber
-&S(h, r, t) = \lVert \textbf{h} + \textbf{r} - \textbf{t} \rVert_{L1/L2}
-\end{align}
+\textbf{TransE。} 在 TransE 中，对于每个三元组$(h, r, t)$，我们定义出以下的潜在关系向量$\textbf{r}_{ht}$和能量函数$S(h,r,t)$：
+\begin{equation}
+\textbf{r}_{ht} = \textbf{t} - \textbf{h}
+\end{equation}
+\begin{equation}
+S(h, r, t) = \lVert \textbf{h} + \textbf{r} - \textbf{t} \rVert_{L1/L2}
+\end{equation}
 由此可以看出，所谓的平移假设，实际上就是希望空间上满足$\mathbf{h}_r + \mathbf{r} \approx \mathbf{t}_r$。
 
-\textbf{TransH.} 在 TransH 中，对于每个给定的实体，其在不同的关系环境下具有不同的嵌入表示。对于每个三元组$(h, r, t)$，我们定义出以下的潜在关系向量$\textbf{r}_{ht}$和能量函数$S(h,r,t)$：
-\begin{align}
-&\textbf{h}_r = \textbf{h} - \textbf{w}_r^{\top} \textbf{h} \textbf{w}_r, \\\nonumber
-&\textbf{t}_r = \textbf{t} - \textbf{w}_r^{\top} \textbf{t} \textbf{w}_r, \\\nonumber
-&\textbf{r}_{ht} = \textbf{t}_r - \textbf{h}_r,  \\\nonumber
-&S(h, r, t) = \lVert \textbf{h}_r + \textbf{r} - \textbf{t}_r \rVert_{L1/L2}
-\end{align}
+\textbf{TransH。} 在 TransH 中，对于每个给定的实体，其在不同的关系环境下具有不同的嵌入表示。对于每个三元组$(h, r, t)$，我们定义出以下的潜在关系向量$\textbf{r}_{ht}$和能量函数$S(h,r,t)$：
+\begin{equation}
+\textbf{h}_r = \textbf{h} - \textbf{w}_r^{\top} \textbf{h} \textbf{w}_r
+\end{equation}
+\begin{equation}
+\textbf{t}_r = \textbf{t} - \textbf{w}_r^{\top} \textbf{t} \textbf{w}_r
+\end{equation}
+\begin{equation}
+\textbf{r}_{ht} = \textbf{t}_r - \textbf{h}_r
+\end{equation}
+\begin{equation}
+S(h, r, t) = \lVert \textbf{h}_r + \textbf{r} - \textbf{t}_r \rVert_{L1/L2}
+\end{equation}
 这里$\textbf{w}_r$是一个归一化之后的向量，用来作为关系$r$所在平面的法向量。
 
-\textbf{TransR.} 在 TransR 中，实体和关系是在不同的空间中被学习得到的，并且实体之间的平移性质是在关系向量所在的空间中进行的。对于每个三元组$(h, r, t)$，我们定义出以下的潜在关系向量$\textbf{r}_{ht}$和能量函数$S(h,r,t)$：
-\begin{align}
-& \textbf{h}_r = \textbf{M}_r \textbf{h} , \\\nonumber 
-& \textbf{t}_r = \textbf{M}_r \textbf{t} , \\\nonumber
-& \textbf{r}_{ht} = \textbf{t}_r - \textbf{h}_r,  \\\nonumber
-& S(h, r, t) = \lVert \textbf{h}_r + \textbf{r} - \textbf{t}_r \rVert_{L1/L2}
-\end{align}
+\textbf{TransR。} 在 TransR 中，实体和关系是在不同的空间中被学习得到的，并且实体之间的平移性质是在关系向量所在的空间中进行的。对于每个三元组$(h, r, t)$，我们定义出以下的潜在关系向量$\textbf{r}_{ht}$和能量函数$S(h,r,t)$：
+\begin{equation}
+\textbf{h}_r = \textbf{M}_r \textbf{h}
+\end{equation}
+\begin{equation}
+\textbf{t}_r = \textbf{M}_r \textbf{t}
+\end{equation}
+\begin{equation}
+\textbf{r}_{ht} = \textbf{t}_r - \textbf{h}_r
+\end{equation}
+\begin{equation}
+S(h, r, t) = \lVert \textbf{h}_r + \textbf{r} - \textbf{t}_r \rVert_{L1/L2}
+\end{equation}
 这里$\textbf{M}_r$是关系$r$的映射矩阵，用来将实体从实体空间映射到关系空间中，以方便平移性质的实现。
 
-\textbf{TransD.} 在 TransD 中，实体和关系同样是在不同的空间中被学习得到的。TransD 和 TransR 是十分相似的，但是其采用了动态的映射矩阵来进行映射。对于每个三元组$(h, r, t)$，我们定义出以下的潜在关系向量$\textbf{r}_{ht}$和能量函数$S(h,r,t)$：
-\begin{align}
-&\textbf{h}_{r} = \textbf{M}_{rh}\textbf{h}, \\\nonumber
-&\textbf{M}_{rh} = \textbf{r}_p\textbf{h}_p^{\top}+\textbf{I}, \\\nonumber
-&\textbf{t}_{r} = \textbf{M}_{rt}\textbf{t},  \\\nonumber
-&\textbf{M}_{th} = \textbf{r}_p\textbf{t}_p^{\top}+\textbf{I}, \\\nonumber
-&\textbf{r}_{ht} = \textbf{t}_r - \textbf{h}_r,  \\\nonumber
-& S(h, r, t) = \lVert \textbf{h}_r + \textbf{r} - \textbf{t}_r \rVert_{L1/L2}
-\end{align}
+\textbf{TransD。} 在 TransD 中，实体和关系同样是在不同的空间中被学习得到的。TransD 和 TransR 是十分相似的，但是其采用了动态的映射矩阵来进行映射。对于每个三元组$(h, r, t)$，我们定义出以下的潜在关系向量$\textbf{r}_{ht}$和能量函数$S(h,r,t)$：
+\begin{equation}
+\textbf{h}_{r} = \textbf{M}_{rh}\textbf{h}, \\\nonumber
+\end{equation}
+\begin{equation}
+\textbf{M}_{rh} = \textbf{r}_p\textbf{h}_p^{\top}+\textbf{I}, \\\nonumber
+\end{equation}
+\begin{equation}
+\textbf{t}_{r} = \textbf{M}_{rt}\textbf{t},  \\\nonumber
+\end{equation}
+\begin{equation}
+\textbf{M}_{th} = \textbf{r}_p\textbf{t}_p^{\top}+\textbf{I}, \\\nonumber
+\end{equation}
+\begin{equation}
+\textbf{r}_{ht} = \textbf{t}_r - \textbf{h}_r,  \\\nonumber
+\end{equation}
+\begin{equation}
+S(h, r, t) = \lVert \textbf{h}_r + \textbf{r} - \textbf{t}_r \rVert_{L1/L2}
+\end{equation}
 这里$\textbf{r}_p$和$\textbf{h}_p, \textbf{t}_p$都是用来生成映射矩阵$\textbf{M}_{rh}$和$\textbf{M}_{rt}$的映射向量。通过这样的映射方式，矩阵运算变为了向量运算，在保持了一定映射性质的情况下加快了整体训练速度。
 
 
@@ -198,7 +208,7 @@ T' = \{(h',r,t)\}  \cup \{(h,r,t')\},
 
 \subsection{基于位移的负例采样算法}
 
-对于 TransE 及其一系列的拓展模型，它们的优化过程都是以最小化其基于边界值的损失函数而进行的，即最小化式\ref{eq:loss}。从大量的实践中我们发现，负例三元组的选择对最后的模型效果有着至关重要的影响。在前文介绍的负例三元组生成模式下，负例三元组集合$T'$是通过随机使用$E$中实体替换正例三元组的头尾实体来构建的。由于很多关系并不是一对一的模式，这意味着这套替换机制有可能用另一个正确的实体替换了当前的实体，$T'$中极有可能含有一些$T$中出现过的三元组。举个例子，替换机制将（\emph{美国}，\emph{总统}，\emph{奥巴马}）替换为（\emph{美国}，\emph{总统}，\emph{克林顿}），两者都是正确的三元组。在实际处理中，如果替换实体之后生成的三元组在$T$中出现，那么这个三元组将不会被用作负例来处理。因此，在原有的负例采样算法中我们会花费大量时间来检验采样出的三元组是否在$T$中出现。为了优化此处的时间复杂度，我们提出了基于位移的负例采样算法来直接生成负例而无需进行任何检验。我们以替换尾实体为例，将该算法伪代码罗列在算法\ref{algo2}中。
+对于 TransE 及其一系列的拓展模型，它们的优化过程都是以最小化其基于边界值的损失函数而进行的，即最小化式\ref{eq2:loss}。从大量的实践中我们发现，负例三元组的选择对最后的模型效果有着至关重要的影响。在前文介绍的负例三元组生成模式下，负例三元组集合$T'$是通过随机使用$E$中实体替换正例三元组的头尾实体来构建的。由于很多关系并不是一对一的模式，这意味着这套替换机制有可能用另一个正确的实体替换了当前的实体，$T'$中极有可能含有一些$T$中出现过的三元组。举个例子，替换机制将（\emph{美国}，\emph{总统}，\emph{奥巴马}）替换为（\emph{美国}，\emph{总统}，\emph{克林顿}），两者都是正确的三元组。在实际处理中，如果替换实体之后生成的三元组在$T$中出现，那么这个三元组将不会被用作负例来处理。因此，在原有的负例采样算法中我们会花费大量时间来检验采样出的三元组是否在$T$中出现。为了优化此处的时间复杂度，我们提出了基于位移的负例采样算法来直接生成负例而无需进行任何检验。我们以替换尾实体为例，将该算法伪代码罗列在算法\ref{algo2}中。
 
 在算法操作过程中，对于所有实体，我们用从$0$开始的连续的整数定义它们的整数编码，并且以此排序来使得实体集合具有序列性质，之后我们的各项操作都可以建立在这些整数编码之上。在替换过程中，我们首先随机一个编码。接着，我们采取了这样一个采样思路——如果存在非候选项（即$E_{hr}$中不能用来替换的实体），其整数编码落在随机数的范围内，我们就在随机编码的基础上加对应数量的偏移，从而将所有的非候选项都错开，并得到一个负采样的三元组。直观上讲，这个方法就是将所有的实体排列在一条线上，其中不能替换的实体会将整个直线划分为若干个线段，如果随机落点落在某个线段内则可以直接返回，如果随机落点出现问题落在顶点上的话，我们就将落点偏移使得落点只会在线段之内，这样生成的三元组是一定不会在$T$中出现的。
 
@@ -210,7 +220,7 @@ T' = \{(h',r,t)\}  \cup \{(h,r,t')\},
 
 \subsection{实验数据集}
 
-在实验中，我们选取了 FB15K 和 WN18 \footnote{https://everest.hds.utc.fr/doku.php?id=en:transe}这两个数据集合来进行测试。数据集合 FB15K 和 WN18 是知识图谱表示学习模型的主要评测基准，并在过去的大量工作中被广泛使用。这两个数据集合都是从公开的大型知识图谱中经过采样得到的子集，其中 FB15K 的内容是从 Freebase 中抽取出的，WN18 的内容是从 WordNet 中抽取出的。我们在表\ref{tab:statistics-of-FB15K}中详细罗列了 FB15K 和 WN18 的整体数据细节。
+在实验中，我们选取了 FB15K 和 WN18 \footnote{https://everest.hds.utc.fr/doku.php?id=en:transe}这两个数据集合来进行测试。数据集合 FB15K 和 WN18 是知识图谱表示学习模型的主要评测基准，并在过去的大量工作中被广泛使用。这两个数据集合都是从公开的大型知识图谱中经过采样得到的子集，其中 FB15K 的内容是从 Freebase 中抽取出的，WN18 的内容是从 WordNet 中抽取出的。我们在表\ref{tab2:statistics-of-FB15K}中详细罗列了 FB15K 和 WN18 的整体数据细节。
 
 \begin{table}[htb]
 \centering
@@ -218,11 +228,11 @@ T' = \{(h',r,t)\}  \cup \{(h,r,t')\},
 \scalebox{1.0}{
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-Dataset & Relation & Entity & Train & Valid & Test \\ \hline
-FB15K   & 1,345           & 14,951            & 483,142 &50,000 &59,071 \\ \hline
-WN18   & 18           & 40,943            & 141,442  &5,000 &5,000 \\ \hline
+数据集合 & 关系 & 实体 & 训练集 & 验证集 & 测试集 \\ \hline
+FB15K   & 1345           & 14951            & 483142 &50000 &59071 \\ \hline
+WN18   & 18           & 40943            & 141442  &5000 &5000 \\ \hline
 \end{tabular}}
-\label{tab:statistics-of-FB15K}
+\label{tab2:statistics-of-FB15K}
 \end{table}
 
 \subsection{实验与模型参数设置}
@@ -230,7 +240,7 @@ WN18   & 18           & 40,943            & 141,442  &5,000 &5,000 \\ \hline
 
 
 \subsection{实验评估方式}
-在 TransE \cite{bordes2013translating} 被提出时，链接预测就作为重要的评测方式来度量模型的嵌入表达能力。其评测方式为：给定一个头实体和关系的组合$(h, r, ?)$来预测对应的尾实体，或者给定一个尾实体和关系的组合$(?, r ,t)$来预测对应的头实体，预测的依据则是模型根据知识图谱结构学到的嵌入表示。在具体实施细节上，对于任意给定的测试三元组$(h, r, t)$，我们枚举所有的实体来替换头实体$h$以及尾实体$t$，并使用式\ref{eq:energy functions}计算能量得分，之后按照升序排列。根据我们归纳出的模型数学性质，$(h, r, t)$如果成立的话，其得分应当比替换后的三元组得分要低，即$h, t$的隐关系向量$\textbf{r}_{ht}$和$r$的向量在空间上是最接近的。这里我们仍然举个例子来说明，如补全三元组（\emph{?}，\emph{著作}，\emph{威尼斯商人}）时，意味着我们在回答``《威尼斯商人》是谁的著作？''这个问题，这时我们要把所有的实体都尝试一下并给出对应的得分，如果模型合理的话，\emph{莎士比亚}被带入时会得到最优的评分。
+在 TransE \cite{bordes2013translating} 被提出时，链接预测就作为重要的评测方式来度量模型的嵌入表达能力。其评测方式为：给定一个头实体和关系的组合$(h, r, ?)$来预测对应的尾实体，或者给定一个尾实体和关系的组合$(?, r ,t)$来预测对应的头实体，预测的依据则是模型根据知识图谱结构学到的嵌入表示。在具体实施细节上，对于任意给定的测试三元组$(h, r, t)$，我们枚举所有的实体来替换头实体$h$以及尾实体$t$，并使用式\ref{eq2:energy functions}计算能量得分，之后按照升序排列。根据我们归纳出的模型数学性质，$(h, r, t)$如果成立的话，其得分应当比替换后的三元组得分要低，即$h, t$的隐关系向量$\textbf{r}_{ht}$和$r$的向量在空间上是最接近的。这里我们仍然举个例子来说明，如补全三元组（\emph{?}，\emph{著作}，\emph{威尼斯商人}）时，意味着我们在回答``《威尼斯商人》是谁的著作？''这个问题，这时我们要把所有的实体都尝试一下并给出对应的得分，如果模型合理的话，\emph{莎士比亚}被带入时会得到最优的评分。
 
 和之前提到的相关工作一样，我们使用正确实体能量得分排在前十的比例来衡量预测质量，我们将这个结果称为$10$预测命中率（Hits@10）。因为我们需要的是模型整体的预测效能，并且从实践中来看$1$命中很难做到，也不是很好对模型质量进行细粒度区分，所以过去的模型和我们都选择了$10$预测命中率来进行实验。此外，我们也报告了正确实体的平均排序名次（Mean Rank)，这个指标结果一定程度上直观体现了整体向量的学习质量。
 
@@ -242,27 +252,27 @@ WN18   & 18           & 40,943            & 141,442  &5,000 &5,000 \\ \hline
 
 对于涉及到的模型的实验结果，我们直接引用了对应论文里汇报的数据，并且记录为其对应模型名。在我们的框架 OpenKE 下实现的各个模型，其实验结果被命名为模型名加``OpenKE''后缀，比如 TransE(OpenKE)。由于我们会与工具包 KB2E 中实现的模型来进行效率对比，所以我们引入了 KB2E 中的 TransE，命名为 TransE(KB2E)。
 
-所有的实验结果都罗列在表\ref{tab:performance_comparison1}之中。除此以外，我们还报告了在不同的线程设定之下，损失函数的下降曲线，不同模型在不同线程设置下的加速比，这些分别体现在图\ref{fig:loss}和图\ref{fig:speedup}中。
+所有的实验结果都罗列在表\ref{tab2:performance_comparison1}之中。除此以外，我们还报告了在不同的线程设定之下，损失函数的下降曲线，不同模型在不同线程设置下的加速比，这些分别体现在图\ref{fig2:loss}和图\ref{fig2:speedup}中。
 
 
 
 \begin{table*}[h]  
   % footnotesize
   \centering  
-  \caption{链接预测的结果}  
+  \caption{WN18、FB15K上链接预测结果}  
   % \fontsize{7}{9}\selectfont  
-  \label{tab:performance_comparison1}  
+  \label{tab2:performance_comparison1}  
   \scalebox{0.94}{
     \begin{tabular}{|c|c c|c c|c|c c|c c|c|}  
     \hline    
-    Data Sets&\multicolumn{5}{c|}{WN18}&\multicolumn{5}{c|}{FB15K}\\\cline{1-11}
-    \multirow{2}{*}{Metric}&
+    数据集合&\multicolumn{5}{c|}{WN18}&\multicolumn{5}{c|}{FB15K}\\\cline{1-11}
+    \multirow{2}{*}{度量方法}&
     \multicolumn{2}{c|}{Mean Rank}&
     \multicolumn{2}{c|}{Hits@10(\%)}&
-    \multirow{2}{*}{time(s)}&
+    \multirow{2}{*}{训练时间(s)}&
     \multicolumn{2}{c|}{Mean Rank}&
     \multicolumn{2}{c|}{Hits@10(\%)}&
-    \multirow{2}{*}{time(s)}
+    \multirow{2}{*}{训练时间(s)}
     \cr
     {}&Raw&Filter&Raw&Filter&{}&Raw&Filter&Raw&Filter&{}\cr
     \hline
@@ -281,20 +291,19 @@ WN18   & 18           & 40,943            & 141,442  &5,000 &5,000 \\ \hline
 \end{table*}
 
 \begin{figure*}[h]
-\small
 \begin{minipage}[]{0.5\linewidth}
 \centering
 \setcaptionwidth{2.8in}
 \includegraphics[width=1\linewidth]{figures/ch2/FB15-transE-loss.png}
 \caption{在不同线程设定下，TransE 在 FB15K 上的损失函数走向}
-\label{fig:loss}
+\label{fig2:loss}
 \end{minipage}
 \begin{minipage}[]{0.5\linewidth}
 \centering
 \setcaptionwidth{2.8in}
 \includegraphics[width=1\linewidth]{figures/ch2/FB15K-transR-speedup.png}
 \caption{在不同线程设定下，OpenKE 下不同模型的加速比曲线}
-\label{fig:speedup}
+\label{fig2:speedup}
 \end{minipage}
 \end{figure*} 
 

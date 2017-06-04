@@ -103,7 +103,7 @@
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage{booktabs}
-\RequirePackage[sort&compress]{natbib}
+\RequirePackage[numbers,super,sort&compress]{natbib}
 \patchcmd{\@chapter}{\addtocontents{lof}{\protect\addvspace{10\p@}}}{}{}{} % lof
 \patchcmd{\@chapter}{\addtocontents{lot}{\protect\addvspace{10\p@}}}{}{}{} % lot
 \RequirePackage{hyperref}
@@ -204,7 +204,7 @@
   \renewcommand{\footrulewidth}{0pt}}
 \fancypagestyle{thu@headings}{%
   \fancyhead{}
-  \fancyhead[C]{\wuhao\normalfont\leftmark}
+  \fancyhead[C]{\wuhao\songti\leftmark}
   \fancyfoot{}
   \fancyfoot[C]{\wuhao\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
@@ -249,6 +249,8 @@
 \def\thu@maketag#1{\maketag@@@{(\ignorespaces #1\unskip\@@italiccorr)}}
 \def\tagform@#1{\maketag@@@{(\ignorespaces #1\unskip\@@italiccorr)\equcaption{#1}}}
 \renewcommand{\eqref}[1]{\textup{(\ref{#1})}}
+\theorembodyfont{\rmfamily\songti}
+\theoremheaderfont{\rmfamily\heiti}
 \setlength{\floatsep}{20bp \@plus4pt \@minus1pt}
 \setlength{\intextsep}{20bp \@plus4pt \@minus2pt}
 \setlength{\textfloatsep}{20bp \@plus4pt \@minus2pt}
@@ -265,7 +267,7 @@
 \fi
 \let\old@tabular\@tabular
 \def\thu@tabular{\dawu[1.5]\old@tabular}
-\DeclareCaptionLabelFormat{thu}{{\dawu[1.5]\normalfont #1~#2}}
+\DeclareCaptionLabelFormat{thu}{{\dawu[1.5]\songti #1~\rmfamily #2}}
 \DeclareCaptionLabelSeparator{thu}{\hspace{1em}}
 \DeclareCaptionFont{thu}{\dawu[1.5]}
 \captionsetup{labelformat=thu,labelsep=thu,font=thu}
@@ -280,7 +282,7 @@
   \noalign{\ifnum0=`}\fi\hrule \@height #1 \futurelet
     \reserved@a\@xhline}
 \def\thu@title@font{%
-  \ifthu@arialtitle\sffamily\else\heiti\fi}
+  \ifthu@arialtitle\sffamily\else\relax\fi}
 \AtBeginDocument{%
   \pagestyle{thu@empty}
   \renewcommand{\chaptermark}[1]{\@mkboth{\CTEXthechapter\hskip\ccwd#1}{}}}
@@ -298,7 +300,7 @@
     beforeskip={\ifthu@bachelor 13bp\else 9bp\fi},
     aftername=\hskip\ccwd,
     afterskip={\ifthu@bachelor 20bp\else 24bp\fi},
-    format={\centering\thu@title@font\ifthu@bachelor\xiaosan\else\sanhao[1]\fi},
+    format={\centering\thu@title@font\heiti\ifthu@bachelor\xiaosan\else\sanhao[1]\fi},
     nameformat=\relax,
     numberformat=\relax,
     titleformat=\thu@chapter@titleformat,
@@ -307,19 +309,19 @@
     afterindent=true,
     beforeskip={\ifthu@bachelor 25bp\else 24bp\fi\@plus 1ex \@minus .2ex},
     afterskip={\ifthu@bachelor 12bp\else 6bp\fi \@plus .2ex},
-    format={\thu@title@font\sihao[1.429]},
+    format={\thu@title@font\heiti\sihao[1.429]},
   },
   subsection={
     afterindent=true,
     beforeskip={\ifthu@bachelor 12bp\else 16bp\fi\@plus 1ex \@minus .2ex},
     afterskip={6bp \@plus .2ex},
-    format={\thu@title@font\ifthu@bachelor\xiaosi[1.667]\else\banxiaosi[1.538]\fi},
+    format={\thu@title@font\heiti\ifthu@bachelor\xiaosi[1.667]\else\banxiaosi[1.538]\fi},
   },
   subsubsection={
     afterindent=true,
     beforeskip={\ifthu@bachelor 12bp\else 16bp\fi\@plus 1ex \@minus .2ex},
     afterskip={6bp \@plus .2ex},
-    format={\thu@title@font\xiaosi[1.667]},
+    format={\csname thu@title@font\endcsname\heiti\xiaosi[1.667]},
   },
   paragraph/afterindent=true,
   subparagraph/afterindent=true}
@@ -531,7 +533,7 @@
       \parbox[t][9cm][t]{\paperwidth-8cm}{
       \renewcommand{\baselinestretch}{1.3}
       \begin{center}
-        \yihao[1.2]{\sffamily\thu@ctitle}\par%
+        \yihao[1.2]{\sffamily\heiti\thu@ctitle}\par%
         \par\vskip 18bp%
         \xiaoer[1]\textrm{\thu@apply}%
       \end{center}}
@@ -805,13 +807,14 @@
                   {\protect\numberline{#1}}}
 \newcommand\listofequations{\thu@listof{equation}}
 \let\l@equation\l@figure
-\newcommand\bibstyle@numerical{\bibpunct{[}{]}{,}{s}{,}{\textsuperscript{,}}}
-\newcommand\bibstyle@authoryear{\bibpunct{(}{)}{;}{a}{,}{,}}
-\newcommand\bibstyle@inline{\bibpunct{[}{]}{,}{n}{,}{,}}
-\citestyle{numerical}
+\bibpunct{[}{]}{,}{s}{}{,}
+\renewcommand\NAT@citesuper[3]{\ifNAT@swa%
+  \unskip\kern\p@\textsuperscript{\NAT@@open #1\NAT@@close}%
+  \if*#3*\else\ (#3)\fi\else #1\fi\endgroup}
 \DeclareRobustCommand\inlinecite{\@inlinecite}
 \def\@inlinecite#1{\begingroup\let\@cite\NAT@citenum\citep{#1}\endgroup}
 \let\onlinecite\inlinecite
+\def\thudot{\ifthu@bachelor\else\unskip.\fi}
 \renewenvironment{thebibliography}[1]{%
    \thu@chapter*{\bibname}%
    \wuhao[1.5]
@@ -834,31 +837,6 @@
    {\def\@noitemerr
      {\@latex@warning{Empty `thebibliography' environment}}%
     \endlist\frenchspacing}
-\patchcmd\NAT@citexnum{%
-  \@ifnum{\NAT@ctype=\z@}{%
-    \if*#2*\else\NAT@cmt#2\fi
-  }{}%
-  \NAT@mbox{\NAT@@close}%
-}{%
-  \NAT@mbox{\NAT@@close}%
-  \@ifnum{\NAT@ctype=\z@}{%
-    \if*#2*\else\textsuperscript{#2}\fi
-  }{}%
-}{}{}
-\renewcommand\NAT@citesuper[3]{\ifNAT@swa
-  \if*#2*\else#2\NAT@spacechar\fi
-\unskip\kern\p@\textsuperscript{\NAT@@open#1\NAT@@close\if*#3*\else#3\fi}%
-   \else #1\fi\endgroup}
-\patchcmd{\NAT@citex}{%
-  \if*#2*\else\NAT@cmt#2\fi
-  \if\relax\NAT@date\relax\else\NAT@@close\fi
-}{%
-  \if\relax\NAT@date\relax\else\NAT@@close\fi
-  \if*#2*\else\textsuperscript{#2}\fi
-}{}{}
-\renewcommand\NAT@cite%
-    [3]{\ifNAT@swa\NAT@@open\if*#2*\else#2\NAT@spacechar\fi
-        #1\NAT@@close\if*#3*\else\textsuperscript{#3}\fi\else#1\fi\endgroup}
 \let\thu@appendix\appendix
 \renewenvironment{appendix}{%
   \let\title\thu@appendix@title

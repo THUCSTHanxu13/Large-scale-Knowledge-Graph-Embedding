@@ -1,107 +1,287 @@
-\begin{thebibliography}{15}
-\bibpunct{[}{]}{,}{s}{,}{,}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname thumasterbib\endcsname\relax
-  \providecommand\thumasterbib{D}\fi
-\expandafter\ifx\csname thuphdbib\endcsname\relax
-  \providecommand\thuphdbib{D}\fi
+\begin{thebibliography}{10}
 
-\bibitem[Miller(1995)]{miller1995wordnet}
-Miller G A.
-\newblock Wordnet: a lexical database for english\allowbreak[J].
-\newblock Communications of the ACM, 1995.
+\bibitem{miller1995wordnet}
+Miller G~A.
+\newblock Wordnet: a lexical database for english.
+\newblock  Communications of the ACM, 1995
+\thudot
 
-\bibitem[Hoffart\ et~al.(2013)Hoffart, Suchanek, Berberich, and
-  Weikum]{hoffart2013yago2}
-Hoffart J, Suchanek F M, Berberich K, et~al.
+\bibitem{hoffart2013yago2}
+Hoffart J, Suchanek F~M, Berberich K, et~al.
 \newblock Yago2: A spatially and temporally enhanced knowledge base from
-  wikipedia\allowbreak[J].
-\newblock Proceedings of Artificial Intelligence, 2013.
+  wikipedia.
+\newblock  Proceedings of Artificial Intelligence, 2013
+\thudot
 
-\bibitem[Auer\ et~al.(2007)Auer, Bizer, Kobilarov, Lehmann, Cyganiak, and
-  Ives]{auer2007dbpedia}
+\bibitem{auer2007dbpedia}
 Auer S, Bizer C, Kobilarov G, et~al.
-\newblock Dbpedia: A nucleus for a web of open
-  data\allowbreak[M]//\allowbreak{}Proceedings of the semantic web.
-\newblock [S.l.: s.n.], 2007
+\newblock Dbpedia: A nucleus for a web of open data.
+\newblock  The semantic web, 2007
+\thudot
 
-\bibitem[Bollacker\ et~al.(2008)Bollacker, Evans, Paritosh, Sturge, and
-  Taylor]{bollacker2008freebase}
+\bibitem{bollacker2008freebase}
 Bollacker K, Evans C, Paritosh P, et~al.
 \newblock Freebase: a collaboratively created graph database for structuring
-  human knowledge\allowbreak[C]//\allowbreak{}Proceedings of KDD.
-\newblock [S.l.: s.n.], 2008.
+  human knowledge.
+\newblock  Proceedings of KDD, 2008
+\thudot
 
-\bibitem[Vrande{\v{c}}i{\'c}\ et~al.(2014)Vrande{\v{c}}i{\'c} and
-  Kr{\"o}tzsch]{vrandevcic2014wikidata}
+\bibitem{vrandevcic2014wikidata}
 Vrande{\v{c}}i{\'c} D, Kr{\"o}tzsch M.
-\newblock Wikidata: a free collaborative knowledgebase\allowbreak[J].
-\newblock Communications of the ACM, 2014.
+\newblock Wikidata: a free collaborative knowledgebase.
+\newblock  Communications of the ACM, 2014
+\thudot
 
-\bibitem[Dong\ et~al.(2014)Dong, Gabrilovich, Heitz, Horn, Lao, Murphy,
-  Strohmann, Sun, and Zhang]{dong2014knowledge}
+\bibitem{dong2014knowledge}
 Dong X, Gabrilovich E, Heitz G, et~al.
 \newblock Knowledge vault: A web-scale approach to probabilistic knowledge
-  fusion\allowbreak[C]//\allowbreak{}Proceedings of SIGKDD.
-\newblock [S.l.: s.n.], 2014.
+  fusion.
+\newblock  Proceedings of SIGKDD, 2014
+\thudot
 
-\bibitem[Bordes\ et~al.(2013)Bordes, Usunier, Garcia-Duran, Weston, and
-  Yakhnenko]{bordes2013translating}
+\bibitem{lao2010relational}
+Lao N, Cohen W~W.
+\newblock Relational retrieval using a combination of path-constrained random
+  walks.
+\newblock  Machine learning, 2010
+\thudot
+
+\bibitem{lao2011random}
+Lao N, Mitchell T, Cohen W~W.
+\newblock Random walk inference and learning in a large scale knowledge base.
+\newblock  Proceedings of EMNLP, 2011
+\thudot
+
+\bibitem{socher2013reasoning}
+Socher R, Chen D, Manning C~D, et~al.
+\newblock Reasoning with neural tensor networks for knowledge base completion.
+\newblock  Proceedings of NIPS, 2013.
+\newblock  926--934
+\thudot
+
+\bibitem{nickel2016holographic}
+Nickel M, Rosasco L, Poggio T.
+\newblock Holographic embeddings of knowledge graphs.
+\newblock  Proceedings of AAAI, 2016
+\thudot
+
+\bibitem{bordes2013translating}
 Bordes A, Usunier N, Garcia-Duran A, et~al.
-\newblock Translating embeddings for modeling multi-relational
-  data\allowbreak[C]//\allowbreak{}Proceedings of NIPS.
-\newblock [S.l.: s.n.], 2013.
+\newblock Translating embeddings for modeling multi-relational data.
+\newblock  Proceedings of NIPS, 2013
+\thudot
 
-\bibitem[Wang\ et~al.(2014)Wang, Zhang, Feng, and Chen]{wang2014transh}
+\bibitem{ji2015knowledge}
+Ji G, He S, Xu L, et~al.
+\newblock Knowledge graph embedding via dynamic mapping matrix.
+\newblock  Proceedings of ACL, 2015
+\thudot
+
+\bibitem{wang2014transh}
 Wang Z, Zhang J, Feng J, et~al.
-\newblock Knowledge graph embedding by translating on
-  hyperplanes\allowbreak[C]//\allowbreak{}Proceedings of AAAI.
-\newblock [S.l.: s.n.], 2014.
+\newblock Knowledge graph embedding by translating on hyperplanes.
+\newblock  Proceedings of AAAI, 2014
+\thudot
 
-\bibitem[Lin\ et~al.(2015)Lin, Liu, Sun, Liu, and Zhu]{lin2015learning}
+\bibitem{lin2015learning}
 Lin Y, Liu Z, Sun M, et~al.
 \newblock Learning entity and relation embeddings for knowledge graph
-  completion\allowbreak[C]//\allowbreak{}Proceedings of AAAI.
-\newblock [S.l.: s.n.], 2015.
+  completion.
+\newblock  Proceedings of AAAI, 2015
+\thudot
 
-\bibitem[Ji\ et~al.(2015)Ji, He, Xu, Liu, and Zhao]{ji2015knowledge}
-Ji G, He S, Xu L, et~al.
-\newblock Knowledge graph embedding via dynamic mapping
-  matrix\allowbreak[C]//\allowbreak{}Proceedings of ACL.
-\newblock [S.l.: s.n.], 2015.
+\bibitem{surdeanu2012multi}
+Surdeanu M, Tibshirani J, Nallapati R, et~al.
+\newblock Multi-instance multi-label learning for relation extraction.
+\newblock  Proceedings of EMNLP, 2012.
+\newblock  455--465
+\thudot
 
-\bibitem[Lin\ et~al.(2016{\natexlab{a}})Lin, Liu, and Sun]{Lin2016Knowledge}
+\bibitem{zeng2014relation}
+Zeng D, Liu K, Lai S, et~al.
+\newblock Relation classification via convolutional deep neural network.
+\newblock  Proceedings of COLING, 2014
+\thudot
+
+\bibitem{weston2013connecting}
+Weston J, Bordes A, Yakhnenko O, et~al.
+\newblock Connecting language and knowledge bases with embedding models for
+  relation extraction.
+\newblock  Proceedings of EMNLP, 2013
+\thudot
+
+\bibitem{wang2014knowledge}
+Wang Z, Zhang J, Feng J, et~al.
+\newblock Knowledge graph embedding by translating on hyperplanes.
+\newblock  Proceedings of AAAI, 2014.
+\newblock  1112--1119
+\thudot
+
+\bibitem{toutanova2015representing}
+Toutanova K, Chen D, Pantel P, et~al.
+\newblock Representing text for joint embedding of text and knowledge bases.
+\newblock  Proceedings of EMNLP, 2015
+\thudot
+
+\bibitem{nickel2011three}
+Nickel M, Tresp V, Kriegel H~P.
+\newblock A three-way model for collective learning on multi-relational data.
+\newblock  Proceedings of ICML, 2011.
+\newblock  809--816
+\thudot
+
+\bibitem{mintz2009distant}
+Mintz M, Bills S, Snow R, et~al.
+\newblock Distant supervision for relation extraction without labeled data.
+\newblock  Proceedings of ACL-IJCNLP, 2009
+\thudot
+
+\bibitem{hoffmann2011knowledge}
+Hoffmann R, Zhang C, Ling X, et~al.
+\newblock Knowledge-based weak supervision for information extraction of
+  overlapping relations.
+\newblock  Proceedings of ACL-HLT, 2011
+\thudot
+
+\bibitem{zeng2015distant}
+Zeng D, Liu K, Chen Y, et~al.
+\newblock Distant supervision for relation extraction via piecewise
+  convolutional neural networks.
+\newblock  Proceedings of EMNLP, 2015
+\thudot
+
+\bibitem{zhang2015relation}
+Zhang D, Wang D.
+\newblock Relation classification via recurrent neural network.
+\newblock arXiv preprint arXiv:1508.01006, 2015.
+\thudot
+
+\bibitem{xu2015classifying}
+Xu Y, Mou L, Li G, et~al.
+\newblock Classifying relations via long short term memory networks along
+  shortest dependency paths.
+\newblock  Proceedings of EMNLP, 2015
+\thudot
+
+\bibitem{miwa2016end}
+Miwa M, Bansal M.
+\newblock End-to-end relation extraction using lstms on sequences and tree
+  structures.
+\newblock Proceedings of ACL, 2016.
+\thudot
+
+\bibitem{xie2016representation}
+Xie R, Liu Z, Jia J, et~al.
+\newblock Representation learning of knowledge graphs with entity descriptions.
+\newblock  Proceedings of AAAI, 2016
+\thudot
+
+\bibitem{wu2016knowledge}
+Wu J, Xie R, Liu Z, et~al.
+\newblock Knowledge representation via joint learning of sequential text and
+  knowledge graphs.
+\newblock arXiv preprint arXiv:1609.07075, 2016.
+\thudot
+
+\bibitem{bahdanau2014neural}
+Bahdanau D, Cho K, Bengio Y.
+\newblock Neural machine translation by jointly learning to align and
+  translate.
+\newblock Proceedings of ICLR, 2015.
+\thudot
+
+\bibitem{lin2016neural}
+Lin Y, Shen S, Liu Z, et~al.
+\newblock Neural relation extraction with selective attention over instances.
+\newblock  Proceedings of ACL, 2016
+\thudot
+
+\bibitem{Lin2016Knowledge}
 Lin Y, Liu Z, Sun M.
 \newblock Knowledge representation learning with entities, attributes and
-  relations\allowbreak[J].
-\newblock Proceedings of IJCAI, 2016{\natexlab{a}}.
+  relations.
+\newblock  Proceedings of IJCAI, 2016
+\thudot
 
-\bibitem[Zeng\ et~al.(2014)Zeng, Liu, Lai, Zhou, and Zhao]{zeng2014relation}
-Zeng D, Liu K, Lai S, et~al.
-\newblock Relation classification via convolutional deep neural
-  network\allowbreak[C]//\allowbreak{}Proceedings of COLING.
-\newblock [S.l.: s.n.], 2014.
-
-\bibitem[Toutanova\ et~al.(2015)Toutanova, Chen, Pantel, Poon, Choudhury, and
-  Gamon]{toutanova2015representing}
-Toutanova K, Chen D, Pantel P, et~al.
-\newblock Representing text for joint embedding of text and knowledge
-  bases.\allowbreak[C]//\allowbreak{}Proceedings of EMNLP.
-\newblock [S.l.: s.n.], 2015.
-
-\bibitem[Lin\ et~al.(2016{\natexlab{b}})Lin, Shen, Liu, Luan, and
-  Sun]{lin2016neural}
-Lin Y, Shen S, Liu Z, et~al.
-\newblock Neural relation extraction with selective attention over
-  instances\allowbreak[C]//\allowbreak{}Proceedings of ACL.
-\newblock [S.l.: s.n.], 2016{\natexlab{b}}.
-
-\bibitem[Mikolov\ et~al.(2013)Mikolov, Chen, Corrado, and
-  Dean]{mikolov2013efficient}
+\bibitem{mikolov2013efficient}
 Mikolov T, Chen K, Corrado G, et~al.
-\newblock Efficient estimation of word representations in vector
-  space\allowbreak[J].
-\newblock Proceedings of ICLR, 2013.
+\newblock Efficient estimation of word representations in vector space.
+\newblock  Proceedings of ICLR, 2013
+\thudot
+
+\bibitem{riedel2010modeling}
+Riedel S, Yao L, McCallum A.
+\newblock Modeling relations and their mentions without labeled text.
+\newblock  Proceedings of ECMLPKDD, 2010
+\thudot
+
+\bibitem{bordes2011learning}
+Bordes A, Weston J, Collobert R, et~al.
+\newblock Learning structured embeddings of knowledge bases.
+\newblock  Proceedings of AAAI, 2011
+\thudot
+
+\bibitem{bordes2012joint}
+Bordes A, Glorot X, Weston J, et~al.
+\newblock Joint learning of words and meaning representations for open-text
+  semantic parsing.
+\newblock  Proceedings of AISTATS, 2012
+\thudot
+
+\bibitem{mikolov2013distributed}
+Mikolov T, Sutskever I, Chen K, et~al.
+\newblock Distributed representations of words and phrases and their
+  compositionality.
+\newblock  Proceedings of NIPS, 2013.
+\newblock  3111--3119
+\thudot
+
+\bibitem{ritzema1994drainage}
+Ritzema H, et~al.
+\newblock Drainage principles and applications.
+\newblock 1994
+\thudot
+
+\bibitem{bordes2014semantic}
+Bordes A, Glorot X, Weston J, et~al.
+\newblock A semantic matching energy function for learning with
+  multi-relational data.
+\newblock Machine Learning, 2014, 94(2):233--259
+\thudot
+
+\bibitem{jenatton2012latent}
+Jenatton R, Roux N~L, Bordes A, et~al.
+\newblock A latent factor model for highly multi-relational data.
+\newblock  Proceedings of NIPS, 2012.
+\newblock  3167--3175
+\thudot
+
+\bibitem{sutskever2009modelling}
+Sutskever I, Tenenbaum J~B, Salakhutdinov R.
+\newblock Modelling relational data using bayesian clustered tensor
+  factorization.
+\newblock  Proceedings of NIPS, 2009.
+\newblock  1821--1828
+\thudot
+
+\bibitem{nickel2012factorizing}
+Nickel M, Tresp V, Kriegel H~P.
+\newblock Factorizing yago: scalable machine learning for linked data.
+\newblock  Proceedings of WWW, 2012.
+\newblock  271--280
+\thudot
+
+\bibitem{bengio2003neural}
+Bengio Y, Ducharme R, Vincent P, et~al.
+\newblock A neural probabilistic language model.
+\newblock JMLR, 2003, 3:1137--1155
+\thudot
+
+\bibitem{mikolov2013linguistic}
+Mikolov T, Yih W~t, Zweig G.
+\newblock Linguistic regularities in continuous space word representations.
+\newblock  Proceedings of HLT-NAACL, 2013.
+\newblock  746--751
+\thudot
 
 \end{thebibliography}

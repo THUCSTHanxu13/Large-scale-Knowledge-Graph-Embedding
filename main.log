@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.16)  31 MAY 2017 01:37
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.16)  4 JUN 2017 23:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1782,20 +1782,20 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \thu@chapter with sig. 's o m o' on line 350.
+. Defining command \thu@chapter with sig. 's o m o' on line 352.
 .................................................
 \thu@title@width=\skip94
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \thu@makecover with sig. 'o' on line 728.
+. Defining command \thu@makecover with sig. 'o' on line 730.
 .................................................
 \thu@kw=\box64
 \enitdp@thu@denotation=\count191
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'acknowledgement' with sig. 'o' on line 786.
+. Defining environment 'acknowledgement' with sig. 'o' on line 788.
 .................................................
 \c@translationbibi=\count192
 \enitdp@translationbib=\count193
@@ -1807,7 +1807,7 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 . LaTeX info: "xparse/define-command"
 . 
 . Defining command \shuji with sig. 'O{\thu@ctitle } O{\thu@cauthor }' on line
-. 890.
+. 868.
 .................................................
 )
 (./thuthesis.cfg
@@ -2026,63 +2026,60 @@ Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \mult@nat@firstbox=\box94
 \colbreak@box=\box95
 \mc@col@check@num=\count332
-) (./main.aux (./data/chap01.aux) (./data/chap02.aux) (./data/chap03.aux
-
-LaTeX Warning: Label `sec:joint' multiply defined.
-
-) (./data/ack.aux))
+) (./main.aux (./data/chap01.aux) (./data/chap02.aux) (./data/chap03.aux) (./da
+ta/ack.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 32.
-LaTeX Font Info:    Try loading font information for OML+ntxmi on input line 32
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 30.
+LaTeX Font Info:    Try loading font information for OML+ntxmi on input line 30
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/ntxsy/m/n on input line 32.
-LaTeX Font Info:    Try loading font information for OMS+ntxsy on input line 32
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/ntxsy/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for OMS+ntxsy on input line 30
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/omsntxsy.fd
 File: omsntxsy.fd 2012/11/14 Fontinst v1.933 font definitions for OMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 32.
-LaTeX Font Info:    Try loading font information for U+ntxexa on input line 32.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for U+ntxexa on input line 30.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 32.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 32.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 30.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 32.
+LaTeX Info: Redefining \selectfont on input line 30.
 \c@mv@tabular=\count333
 \c@mv@boldtabular=\count334
 Package caption Info: Begin \AtBeginDocument code.
@@ -2105,7 +2102,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 99.
 
 )
-Package hyperref Info: Link coloring OFF on input line 32.
+Package hyperref Info: Link coloring OFF on input line 30.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -2115,9 +2112,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count335
 )
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
@@ -2133,19 +2130,19 @@ LaTeX Info: Redefining \nameref on input line 32.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * hratio: 1:1
 * modes: twoside 
-* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
-* v-part:(T,H,B)=(88.20355pt, 674.3303pt, 82.51299pt)
+* h-part:(L,W,R)=(91.04881pt, 415.41025pt, 91.04881pt)
+* v-part:(T,H,B)=(113.81104pt, 625.96062pt, 105.27519pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=426.79135pt
-* \textheight=674.3303pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=13.08827pt
-* \topmargin=-12.51917pt
+* \textwidth=415.41025pt
+* \textheight=625.96062pt
+* \oddsidemargin=18.77882pt
+* \evensidemargin=18.77882pt
+* \topmargin=13.08832pt
 * \headheight=14.22636pt
 * \headsep=14.22636pt
 * \topskip=12.0pt
-* \footskip=17.07164pt
+* \footskip=48.36967pt
 * \marginparwidth=0.0pt
 * \marginparsep=0.0pt
 * \columnsep=10.0pt
@@ -2160,16 +2157,17 @@ LaTeX Info: Redefining \nameref on input line 32.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (./data/cover.tex)
+File: figures/tsinghua.pdf Graphic file (type QTm)
+ <use  "figures/tsinghua.pdf" >
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 26.09749pt on input line 40.
+(Font)              scaled to size 36.135pt on input line 38.
 
 *************************************************
-* fontspec warning: "script-not-exist-latn"
+* fontspec warning: "script-not-exist"
 * 
-* Font 'STXihei' does not contain script 'CJK'.
-* 'Latin' script used instead.
+* Font 'STHeiti' does not contain script 'CJK'.
 *************************************************
-\g__fontspec_family_STXihei_int=\count336
+\g__fontspec_family_STHeiti_int=\count336
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -2178,35 +2176,29 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 .................................................
 . fontspec info: "no-font-shape"
 . 
-. Could not resolve font STXihei/I (it probably doesn't exist).
+. Could not resolve font STHeiti/BI (it probably doesn't exist).
 .................................................
-LaTeX Font Info:    Try loading font information for T1+qhv on input line 40.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/tex-gyre/t1qhv.fd
-File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
-)
-LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 10.84042pt on input line 40.
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font STHeiti/I (it probably doesn't exist).
+.................................................
 .................................................
 . fontspec info: "defining-font"
 . 
-. Font family 'STXihei(0)' created for font 'STXihei' with options
-. [Script={CJK},BoldFont={STHeiti}].
+. Font family 'STHeiti(0)' created for font 'STHeiti' with options
+. [Script={CJK},AutoFakeBold={4}].
 . 
 . This font family consists of the following NFSS series/shapes:
-. - 'normal' (m/n) with NFSS spec.: <->"STXihei/OT:script=latn;language=DFLT;"
+. - 'normal' (m/n) with NFSS spec.: <->"STHeiti/OT:"
 . - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
-. <->"STHeiti/OT:script=latn;language=DFLT;"
-. - 'bold small caps'  (bx/sc) with NFSS spec.: - 'bold italic' (bx/it) with
-. NFSS spec.: <->"STXihei/BI/OT:script=latn;language=DFLT;"
-. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+. <->"STHeiti/OT:embolden=4;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
-LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 23.48758pt on input line 40.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 18.06749pt on input line 40.
+(Font)              scaled to size 18.06749pt on input line 38.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 16.06pt on input line 40.
-
+(Font)              scaled to size 26.09749pt on input line 38.
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -2240,30 +2232,32 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 . <->"STFangsong/OT:embolden=4;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
-LaTeX Font Info:    Try loading font information for OT1+ntxtlf on input line 4
-0.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 16.06pt on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+ntxtlf on input line 3
+8.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2015/01/17 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 16.06pt on input line 40.
+(Font)              scaled to size 16.06pt on input line 38.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.05249pt on input line 40.
+(Font)              scaled to size 14.05249pt on input line 38.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 40.
-LaTeX Font Info:    Try loading font information for U+ntxmia on input line 40.
+(Font)              scaled to size 10.53937pt on input line 38.
+LaTeX Font Info:    Try loading font information for U+ntxmia on input line 38.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsym on input line 40.
+LaTeX Font Info:    Try loading font information for U+ntxsym on input line 38.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 40.
+LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 38.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/untxsyc.fd
@@ -2306,128 +2300,93 @@ File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 
 
 
+]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 22.08249pt on input line 38.
+LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <12.045> not available
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 38.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.045pt on input line 38.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.045pt on input line 38.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 38.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 38.
+ [2
+
+]
+*************************************************
+* fontspec warning: "script-not-exist-latn"
+* 
+* Font 'STXihei' does not contain script 'CJK'.
+* 'Latin' script used instead.
+*************************************************
+\g__fontspec_family_STXihei_int=\count338
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font STHeiti/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font STXihei/I (it probably doesn't exist).
+.................................................
+LaTeX Font Info:    Try loading font information for T1+qhv on input line 38.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tex-gyre/t1qhv.fd
+File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
+)
+LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
+(Font)              scaled to size 10.84042pt on input line 38.
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STXihei(0)' created for font 'STXihei' with options
+. [Script={CJK},BoldFont={STHeiti}].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.: <->"STXihei/OT:script=latn;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
+. <->"STHeiti/OT:script=latn;language=DFLT;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: - 'bold italic' (bx/it) with
+. NFSS spec.: <->"STXihei/BI/OT:script=latn;language=DFLT;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
+(Font)              scaled to size 13.55052pt on input line 38.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 38.
+LaTeX Font Info:    Try loading font information for TS1+ntxtlf on input line 3
+8.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
+)
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 38.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.52437pt on input line 38.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 9.03374pt on input line 38.
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 9.03374pt on input line 38.
+ [1
+
+
+
 ] [2
 
 
 ]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 22.08249pt on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <22.08249> not availabl
-e
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 22.08249pt on input line 40.
-LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <22.08249> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 40.
-LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 19.8741pt on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <16.06> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 16.06pt on input line 40.
-LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <16.06> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 40.
-LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 14.45389pt on input line 40.
-LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 14.45389pt on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 15.05624pt on input line 40.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 15.05624pt on input line 40.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.045pt on input line 40.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 40.
- [3] [4
+[3] (./main.toc [4
 
 
-]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'STHeiti' does not contain script 'CJK'.
-*************************************************
-\g__fontspec_family_STHeiti_int=\count338
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font STHeiti/I (it probably doesn't exist).
-.................................................
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font STHeiti/BI (it probably doesn't exist).
-.................................................
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font STHeiti/I (it probably doesn't exist).
-.................................................
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'STHeiti(0)' created for font 'STHeiti' with options
-. [Script={CJK},AutoFakeBold={4}].
-. 
-. This font family consists of the following NFSS series/shapes:
-. - 'normal' (m/n) with NFSS spec.: <->"STHeiti/OT:"
-. - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
-. <->"STHeiti/OT:embolden=4;"
-. - 'bold small caps'  (bx/sc) with NFSS spec.: 
-.................................................
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.05249pt on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <14.05249> not availabl
-e
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.05249pt on input line 40.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 40.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 40.
-[5] [6
-
-
-]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 40.
-LaTeX Font Info:    Try loading font information for TS1+ntxtlf on input line 4
-0.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
-)
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.52437pt on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 40.
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 40.
-
-[1
-
-
-]
-LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <12.045> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.045pt on input line 40.
- [2
-
-
-] (./main.toc [3
-
-
-])
+] [5])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- (./data/denotation.tex [4]
+ (./data/denotation.tex [6]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 12.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
@@ -2436,7 +2395,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 8.0pt on input line 12.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 6.0pt on input line 12.
-) [5
+) [7
 
 
 ]
@@ -2451,8 +2410,13 @@ LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+\T1/ntxtlf/m/n/9.03374 YAGO: http://www.mpi-inf.mpg.de/departments/databases-an
+d-information-systems/research/yago-
+ []
+
 File: figures/ch1/KG_example.png Graphic file (type QTm)
- <use  "figures/ch1/KG_example.png" >
+<use  "figures/ch1/KG_example.png" >
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 11.04124pt on input line 21.
 LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 21
@@ -2473,31 +2437,33 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.06006pt on input line 21.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.045pt on input line 25.
- [2]) [3]
+ [2] [3]) [4]
 \openout2 = `data/chap02.aux'.
 
  (./data/chap02.tex
 第2章
-File: figures/ch2/3.jpg Graphic file (type QTm)
-<use  "figures/ch2/3.jpg" >
-LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 11.74377pt on input line 62.
- [4
+
+Package natbib Warning: Citation `ji2016knowledge' on page 5 undefined on input
+ line 8.
+
+[5
 
 
 
 ]
+File: figures/ch2/3.jpg Graphic file (type QTm)
+ <use  "figures/ch2/3.jpg" > [6]
 Package hyperref Info: bookmark level for unknown equation defaults to 0 on inp
-ut line 76.
- [5] [6]
+ut line 62.
+ [7] [8] [9]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 128.
+put line 138.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 161.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 171.
 
-[7] [8] [9] [10] [11]
-Overfull \hbox (0.89813pt too wide) in paragraph at lines 280--281
+[10] [11] [12] [13] [14]
+Overfull \hbox (63.59204pt too wide) in paragraph at lines 290--291
  [][] 
  []
 
@@ -2506,55 +2472,81 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: figures/ch2/FB15-transE-loss.png Graphic file (type QTm)
 <use  "figures/ch2/FB15-transE-loss.png" >
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.0pt on input line 291.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.0pt on input line 291.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.53937pt on input line 291.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 7.0pt on input line 291.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 5.0pt on input line 291.
 File: figures/ch2/FB15K-transR-speedup.png Graphic file (type QTm)
 
 <use  "figures/ch2/FB15K-transR-speedup.png" >
-Overfull \hbox (1.58084pt too wide) in paragraph at lines 285--299
+Overfull \hbox (1.80669pt too wide) in paragraph at lines 294--308
 []$[]$ $[]$ 
  []
 
-[12] [13]) [14] [15]
+[15] [16]) [17] [18]
 \openout2 = `data/chap03.aux'.
 
  (./data/chap03.tex
 第3章
+[19
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 5.
 
+
+] [20] [21]
 File: figures/ch3/joint.jpg Graphic file (type QTm)
-<use  "figures/ch3/joint.jpg" > [16
-
-
-
-]
-
-LaTeX Warning: Reference `sec:alignment' on page 17 undefined on input line 19.
-
-
-[17] [18]
-File: figures/ch3/cnn.jpg Graphic file (type QTm)
- <use  "figures/ch3/cnn.jpg" >
-File: figures/ch3/cnn_concrete.png Graphic file (type QTm)
- <use  "figures/ch3/cnn_concrete.png" >
+ <use  "figures/ch3/joint.jpg" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] [20] [21] [22] [23]) [24] (./main.lof)
+[22] [23] [24] [25] [26]
+File: figures/ch3/cnn.jpg Graphic file (type QTm)
+ <use  "figures/ch3/cnn.jpg" >
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[27] [28] [29]
+File: figures/ch3/cnn_concrete.png Graphic file (type QTm)
+ <use  "figures/ch3/cnn_concrete.png" > [30] [31] [32] [33]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 9.03374pt on input line 275.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 5.0pt on input line 275.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 9.03374pt on input line 275.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 5.0pt on input line 275.
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
+[]\EU1/STSong(0)/m/n/12.045 在 \T1/ntxtlf/m/n/12.045 NYT-FB60K \EU1/STSong(0)/m/
+n/12.045 数 据 集 上 的 测 试 结 果 都 被 罗 列 在 图[]\T1/ntxtlf/m/n/12.045 3.4[]\EU1/STSong(
+0)/m/n/12.045 中。|  图 中
+ []
+
+[35]
+File: figures/ch3/res.eps Graphic file (type eps)
+ <figures/ch3/res.eps> [36]
+LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <11.04124> not availabl
+e
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 335.
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 11.04124pt on input line 335.
+ [37] [38]
+Missing character: There is no （ in font ntx-Regular-tlf-ot1!
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+Missing character: There is no ） in font ntx-Regular-tlf-ot1!
+Missing character: There is no （ in font ntx-Regular-tlf-ot1!
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+Missing character: There is no ） in font ntx-Regular-tlf-ot1!
+
+Overfull \hbox (4.551pt too wide) in paragraph at lines 408--410
+ [][] 
+ []
+
+[39] [40]) [41] (./main.lof)
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [25
+ [42
 
 
 
@@ -2563,30 +2555,74 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [26
+ [43
 
 
-] (./main.loe)
+] (./main.loe [44
+
+
+] [45])
 \tf@loe=\write7
 \openout7 = `main.loe'.
 
-(./main.bbl [27
+
+(./main.bbl [46]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.53937pt on input line 1.
+ [47
 
 
-] [28]) [29
-
-
-]
+] [48]) [49]
 \openout2 = `data/ack.aux'.
 
- (./data/ack.tex [30
+ (./data/ack.tex [50
 
 
 
-]) [31
+]) [51
 
 
 ]
+(./data/appendix01.tex
+附录 A
+File: figures/trans/model_idea.pdf Graphic file (type QTm)
+<use  "figures/trans/model_idea.pdf" > [52
+
+
+] [53]
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+Missing character: There is no 。 in font ntx-Regular-tlf-ot1!
+ [54]
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'STFangsong' does not contain script 'CJK'.
+*************************************************
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 68.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+ [55]
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+ [56]
+Missing character: There is no 。 in font ntx-Regular-tlf-ot1!
+Missing character: There is no 。 in font ntx-Regular-tlf-ot1!
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+
+[57]
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+ [58] [59]
+Overfull \hbox (11.15068pt too wide) in paragraph at lines 210--233
+ [][] 
+ []
+
+[60] [61] [62] [63]
+File: figures/trans/RE_text.pdf Graphic file (type QTm)
+ <use  "figures/trans/RE_text.pdf" > [64])
 File: figures/scan-record.pdf Graphic file (type QTm)
 
 <use  "figures/scan-record.pdf" >
@@ -2597,7 +2633,7 @@ File: figures/scan-record.pdf Graphic file (type QTm)
 <use  "figures/scan-record.pdf"  page1>
 File: figures/scan-record.pdf Graphic file (type QTm)
 
-<use  "figures/scan-record.pdf"  page1>
+<use  "figures/scan-record.pdf"  page1> [65]
 File: figures/scan-record.pdf Graphic file (type QTm)
 
 <use  "figures/scan-record.pdf"  page1>
@@ -2606,9 +2642,7 @@ File: figures/scan-record.pdf Graphic file (type QTm)
 <use  "figures/scan-record.pdf"  page1>
 File: figures/scan-record.pdf Graphic file (type QTm)
 
-<use  "figures/scan-record.pdf"  page1> [32
-
-]
+<use  "figures/scan-record.pdf"  page1> [66]
 File: figures/scan-record.pdf Graphic file (type QTm)
 
 <use  "figures/scan-record.pdf"  page2>
@@ -2617,31 +2651,28 @@ File: figures/scan-record.pdf Graphic file (type QTm)
 <use  "figures/scan-record.pdf"  page2>
 File: figures/scan-record.pdf Graphic file (type QTm)
 
-<use  "figures/scan-record.pdf"  page2> [33]
+<use  "figures/scan-record.pdf"  page2> [67]
 \tf@thm=\write8
 \openout8 = `main.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
- (./main.aux (./data/chap01.aux)
-(./data/chap02.aux) (./data/chap03.aux) (./data/ack.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 89.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 89.
 
 
-LaTeX Warning: There were undefined references.
+Package natbib Warning: There were undefined citations.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
+(./main.aux (./data/chap01.aux) (./data/chap02.aux) (./data/chap03.aux)
+(./data/ack.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 88.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
- 35721 strings out of 493591
- 665160 string characters out of 6143546
- 679717 words of memory out of 5000000
- 38580 multiletter control sequences out of 15000+600000
- 139273 words of font info for 186 fonts, out of 8000000 for 9000
+ 35798 strings out of 493591
+ 663501 string characters out of 6143546
+ 686763 words of memory out of 5000000
+ 38648 multiletter control sequences out of 15000+600000
+ 111730 words of font info for 160 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 70i,18n,96p,10437b,695s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,18n,96p,10437b,718s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (44 pages).
+Output written on main.pdf (76 pages).

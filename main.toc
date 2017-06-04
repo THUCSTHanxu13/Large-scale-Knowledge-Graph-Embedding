@@ -3,34 +3,68 @@
 \contentsline {section}{\numberline {1.2}研究内容}{3}{section.1.2}
 \contentsline {section}{\numberline {1.3}相关工作}{3}{section.1.3}
 \contentsline {section}{\numberline {1.4}本文贡献}{3}{section.1.4}
-\contentsline {section}{\numberline {1.5}论文组织}{3}{section.1.5}
-\contentsline {chapter}{\numberline {第2章\hspace {0.3em}}基于并行的大规模知识图谱表示学习框架}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}简介}{4}{section.2.1}
-\contentsline {section}{\numberline {2.2}算法框架}{4}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}符号体系和重要概念}{5}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}知识图谱表示学习模型}{5}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}并行结构}{8}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}基于位移的负例采样算法}{9}{subsection.2.2.4}
-\contentsline {section}{\numberline {2.3}实验设计与结果分析}{10}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}实验数据集}{10}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}实验与模型参数设置}{11}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}实验评估方式}{11}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}实验结果与分析}{12}{subsection.2.3.4}
-\contentsline {section}{\numberline {2.4}本章小结}{14}{section.2.4}
-\contentsline {chapter}{\numberline {第3章\hspace {0.3em}}基于并行的知识图谱与文本模型联合学习框架}{16}{chapter.3}
-\contentsline {section}{\numberline {3.1}算法框架}{16}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}符号体系和重要概念}{17}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}联合学习的整体模式}{17}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}知识图谱表示学习模型}{18}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}文本关系表示学习模型}{19}{subsection.3.1.4}
-\contentsline {subsubsection}{\numberline {3.1.4.1}输入层}{21}{subsubsection.3.1.4.1}
-\contentsline {subsection}{\numberline {3.1.5}卷积层}{22}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}池化层}{23}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}基于知识的跨句注意力机制}{23}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}初始化及实现细节}{24}{subsection.3.1.8}
-\contentsline {chapter}{插图索引}{25}{section*.18}
-\contentsline {chapter}{表格索引}{26}{section*.20}
-\contentsline {chapter}{公式索引}{27}{section*.22}
-\contentsline {chapter}{参考文献}{29}{section*.24}
-\contentsline {chapter}{致\hspace {1em}谢}{30}{section*.26}
-\contentsline {chapter}{声\hspace {1em}明}{31}{section*.28}
+\contentsline {section}{\numberline {1.5}论文组织}{4}{section.1.5}
+\contentsline {chapter}{\numberline {第2章\hspace {0.3em}}基于并行的大规模知识图谱表示学习框架}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}章节引言}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}相关工作}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}早期的表示模型}{5}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}基于张量的表示模型}{5}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}算法框架}{5}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}符号体系和重要概念}{6}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}知识图谱表示学习模型}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}并行结构}{10}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}基于位移的负例采样算法}{12}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}实验设计与结果分析}{13}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}实验数据集}{13}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}实验与模型参数设置}{14}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}实验评估方式}{14}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}实验结果与分析}{15}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}本章小结}{17}{section.2.5}
+\contentsline {chapter}{\numberline {第3章\hspace {0.3em}}基于并行的知识图谱与文本模型联合学习框架}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}章节引言}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}相关工作}{20}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}知识图谱表示学习模型}{20}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}文本关系表示学习模型}{21}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}基于联合学习的知识获取模型}{21}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}基于注意力机制的神经网络模型}{22}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}算法框架}{22}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}符号体系和重要概念}{22}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}联合学习的整体模式}{23}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}知识图谱表示学习模型}{25}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}文本关系表示学习模型}{27}{subsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.4.1}输入层}{29}{subsubsection.3.3.4.1}
+\contentsline {subsection}{\numberline {3.3.5}卷积层}{29}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}池化层}{31}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.7}基于知识的跨句注意力机制}{31}{subsection.3.3.7}
+\contentsline {subsection}{\numberline {3.3.8}初始化及实现细节}{32}{subsection.3.3.8}
+\contentsline {section}{\numberline {3.4}实验设计与结果分析}{32}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}实验设定}{33}{subsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.1.1}实验数据集}{33}{subsubsection.3.4.1.1}
+\contentsline {subsubsection}{\numberline {3.4.1.2}图谱文本匹配}{34}{subsubsection.3.4.1.2}
+\contentsline {subsubsection}{\numberline {3.4.1.3}实验与模型参数设置}{34}{subsubsection.3.4.1.3}
+\contentsline {subsection}{\numberline {3.4.2}关系抽取实验结果}{35}{subsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.2.1}测试结果}{35}{subsubsection.3.4.2.1}
+\contentsline {subsubsection}{\numberline {3.4.2.2}联合学习及基于知识的注意力机制的定量分析}{37}{subsubsection.3.4.2.2}
+\contentsline {subsection}{\numberline {3.4.3}图谱填充实验结果}{39}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}本章小结}{41}{section.3.5}
+\contentsline {chapter}{插图索引}{42}{section*.23}
+\contentsline {chapter}{表格索引}{43}{section*.25}
+\contentsline {chapter}{公式索引}{44}{section*.27}
+\contentsline {chapter}{参考文献}{47}{section*.29}
+\contentsline {chapter}{致\hspace {1em}谢}{50}{section*.31}
+\contentsline {chapter}{声\hspace {1em}明}{51}{section*.33}
+\contentsline {chapter}{\numberline {附录 A\hspace {0.3em}}外文资料的调研阅读报告或书面翻译}{52}{appendix.A}
+\contentsline {section}{\numberline {A.1}引言}{52}{section.A.1}
+\contentsline {section}{\numberline {A.2}相关工作}{54}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}TransE和TransH}{54}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}其他模型}{55}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}我们的模型}{56}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}TransR}{56}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}基于聚类的 TransR (CTransR)}{57}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}训练方法和实现细节}{58}{subsection.A.3.3}
+\contentsline {section}{\numberline {A.4}实验和分析}{58}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}数据集合和实验设置}{58}{subsection.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}链接预测}{59}{subsection.A.4.2}
+\contentsline {subsection}{\numberline {A.4.3}三元组分类}{62}{subsection.A.4.3}
+\contentsline {subsection}{\numberline {A.4.4}文本中的关系抽取}{63}{subsection.A.4.4}
+\contentsline {section}{\numberline {A.5}结论}{65}{section.A.5}
