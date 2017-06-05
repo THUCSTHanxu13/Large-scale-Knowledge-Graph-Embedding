@@ -90,6 +90,12 @@ Lin Y, Liu Z, Sun M, et~al.
 \newblock  Proceedings of AAAI, 2015
 \thudot
 
+\bibitem{Abadi2016TensorFlow}
+Abadi M, Barham P, Chen J, et~al.
+\newblock Tensorflow: A system for large-scale machine learning.
+\newblock 2016.
+\thudot
+
 \bibitem{surdeanu2012multi}
 Surdeanu M, Tibshirani J, Nallapati R, et~al.
 \newblock Multi-instance multi-label learning for relation extraction.

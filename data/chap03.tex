@@ -3,7 +3,7 @@
 
 \section{章节引言}
 
-我们之前介绍过，典型的知识图谱是一个多关系有向图，其节点对应于现实世界中的抽象实体，边对应于抽象实体间的复杂关联。知识图谱中的事实通常以关系三元组的形式存在，如$(h, r, t)$，$h$和$t$表示\emph{头}实体和\emph{尾}实体，$r$表示$h$和$t$之间的\emph{关系}。例如（\emph{马克吐温}，\emph{出生于}，\emph{佛罗里达州}）。
+我们之前介绍过，典型的知识图谱是一个多关系有向图，其节点对应于现实世界中的抽象实体，边对应于抽象实体间的复杂关联。知识图谱中的事实通常以关系三元组的形式存在，如$(h, r, t)$，$h$和$t$表示\emph{头}实体和\emph{尾}实体，$r$表示$h$和$t$之间的\emph{关系}。例如（\emph{马克·吐温}，\emph{出生于}，\emph{佛罗里达州}）。
 
 不过目前的知识图谱还远远达不到完善的程度，尽管它们规模已经很庞大了。通常有两类任务来获取知识信息并以此拓展知识图谱，知识图谱填充以及关系抽取。知识图谱填充旨在通过图谱内部的网络空间结构来挖掘信息并推测新的事实三元组，其中包括了基于图结构的模型\cite{lao2010relational,lao2011random}，基于张量的模型\cite{socher2013reasoning, nickel2016holographic}，以及基于平移的模型\cite{bordes2013translating,ji2015knowledge}。与图谱填充技术不太一样，关系抽取主要是从自由文本中提取特征并用来抓取新的关系事实。在这个方向上，也有大量行之有效的工作出现。Surdeanu \cite{surdeanu2012multi}就提出了一套基于多实例和远距离监督算法的模型，成为现在大多数方法的雏形。近年来，随着深度学习的发展，Zeng \cite{zeng2014relation}使用卷积神经网络来嵌入语句特征，也获得了不错的结果。
 
@@ -137,7 +137,7 @@ P(h|(r, t),{\theta_E, \theta_R}) = \frac{\exp(f_r(h, t))}{\sum_{h' \in E} \exp(f
 \subsection{文本关系表示学习模型}
 \label{sec3:relation}
 
-给定一个包含两个实体的句子，句子中的词以及句子本身的语义信息很大程度上可以揭开这两个实体间的关系，比如``马克吐温出生于佛罗里达州''直接表明了\emph{马克吐温}和\emph{佛罗里达州}是\emph{人与籍贯}的关系。Zeng、Toutanova以及Lin\cite{zeng2014relation,toutanova2015representing,lin2016neural}，他们在各自的工作中都开始尝试使用神经网络来挖掘这样的语义信息，并且将语义信息所描述的关系嵌入到低维空间中用来进行关系抽取。和他们的工作\cite{zeng2014relation,toutanova2015representing,lin2016neural}相似，我们也采用了卷积神经网络 CNN 对文本关系进行表示学习。其实对于文本来说，卷积神经网络并不是最好的，但却是效率最高的，这也是我们选择卷积神经网络而不是循环神经网络 RNN 的重要原因。
+给定一个包含两个实体的句子，句子中的词以及句子本身的语义信息很大程度上可以揭开这两个实体间的关系，比如``马克·吐温出生于佛罗里达州''直接表明了\emph{马克·吐温}和\emph{佛罗里达州}是\emph{人与籍贯}的关系。Zeng、Toutanova以及Lin\cite{zeng2014relation,toutanova2015representing,lin2016neural}，他们在各自的工作中都开始尝试使用神经网络来挖掘这样的语义信息，并且将语义信息所描述的关系嵌入到低维空间中用来进行关系抽取。和他们的工作\cite{zeng2014relation,toutanova2015representing,lin2016neural}相似，我们也采用了卷积神经网络 CNN 对文本关系进行表示学习。其实对于文本来说，卷积神经网络并不是最好的，但却是效率最高的，这也是我们选择卷积神经网络而不是循环神经网络 RNN 的重要原因。
 
 
 \begin{figure}[h]
@@ -168,7 +168,7 @@ P((s, r_s)|{\theta_V}) = \frac{\exp(\mathbf{o}_{r_s})}{\sum_{r \in R} \exp(\math
 
 文本词向量可以将词的语义信息编码到低维空间中，并且通常会通过大量文本预先训练获得。大量的实验表明，以预先训练好的词向量作为网络输入可以有效提升神经网络的模型效果。在我们的工作中，词向量通过 Skip-Gram \cite{mikolov2013efficient}在大规模文本语料上提前训练获得。
 
-位置向量的概念首次被提出是在 Zeng \cite{zeng2014relation} 的工作中。位置向量是一个可以表明给定单词与句子标注实体之间相隔距离的特征。举个例子，``\emph{马克吐温}出生于\emph{佛罗里达州}''中，\emph{马克吐温}与\emph{佛罗里达州}是标注出的实体，\emph{出}离\emph{马克吐温}和\emph{佛罗里达州}的距离分别为$1$和$-3$。我们会将这些距离也映射到维度$k_p$的连续空间上。对于句子$s$中给定的单词$w_i$，它的位置向量为$\mathbf{p}_i = [\mathbf{p}^h_i, \mathbf{p}^t_i]$, $\mathbf{p}^h_i, \mathbf{p}^t_i \in \mathbb{R}^{k_p}$，其中$\mathbf{p}^h_i$ 和 $\mathbf{p}^t_i$分别是到头实体以及尾实体之间的距离向量。
+位置向量的概念首次被提出是在 Zeng \cite{zeng2014relation} 的工作中。位置向量是一个可以表明给定单词与句子标注实体之间相隔距离的特征。举个例子，``\emph{马克·吐温}出生于\emph{佛罗里达州}''中，\emph{马克·吐温}与\emph{佛罗里达州}是标注出的实体，\emph{出}离\emph{马克·吐温}和\emph{佛罗里达州}的距离分别为$1$和$-3$。我们会将这些距离也映射到维度$k_p$的连续空间上。对于句子$s$中给定的单词$w_i$，它的位置向量为$\mathbf{p}_i = [\mathbf{p}^h_i, \mathbf{p}^t_i]$, $\mathbf{p}^h_i, \mathbf{p}^t_i \in \mathbb{R}^{k_p}$，其中$\mathbf{p}^h_i$ 和 $\mathbf{p}^t_i$分别是到头实体以及尾实体之间的距离向量。
 
 接着我们合并词向量$\mathbf{w}_i \in \mathbb{R}^{k_w} $与位置向量$\mathbf{p}_i \in \mathbb{R}^{k_p \times 2} $得到最终的输入向量$\mathbf{x}_i \in \mathbb{R}^{k_i} (k_i = k_w + k_p \times 2)$，从而卷积神经网络的输入为：
 \begin{align}

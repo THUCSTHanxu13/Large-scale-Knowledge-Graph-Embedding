@@ -1,10 +1,10 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces 一些常用的大规模知识图谱\cite {bollacker2008freebase,auer2007dbpedia,hoffart2013yago2,miller1995wordnet,vrandevcic2014wikidata}\relax }}{3}{figure.caption.10}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces 基于并行的大规模知识图谱表示学习框架 OpenKE 的结构示意图\relax }}{6}{figure.caption.11}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces 在不同线程设定下，TransE 在 FB15K 上的损失函数走向\relax }}{15}{figure.caption.14}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces 在不同线程设定下，OpenKE 下不同模型的加速比曲线\relax }}{15}{figure.caption.14}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 基于并行的知识图谱与文本模型联合学习框架\relax }}{23}{figure.caption.15}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 基于知识注意力机制的卷积神经网络模型\relax }}{28}{figure.caption.16}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces 卷积层和池化层的结构示意图\relax }}{30}{figure.caption.17}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces JointD+KATT、JointE+KATT、CNN+ATT、CNN+ONE、MIML、MultiR、Mintz 与 Sm2r 的准确率/召回率曲线\relax }}{36}{figure.caption.20}
-\contentsline {figure}{\numberline {A-1}{\ignorespaces Simple illustration of TransR.\relax }}{52}{figure.caption.35}
-\contentsline {figure}{\numberline {A-2}{\ignorespaces TransE, TransH 和 TransR 在关系抽取任务上的准确召回率曲线。\relax }}{64}{figure.caption.41}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 基于并行的大规模知识图谱表示学习框架 OpenKE 的结构示意图\relax }}{10}{figure.caption.11}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 在不同线程设定下，TransE 在 FB15K 上的损失函数走向\relax }}{19}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 在不同线程设定下，OpenKE 下不同模型的加速比曲线\relax }}{19}{figure.caption.14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 基于并行的知识图谱与文本模型联合学习框架\relax }}{26}{figure.caption.15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 基于知识注意力机制的卷积神经网络模型\relax }}{31}{figure.caption.16}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 卷积层和池化层的结构示意图\relax }}{33}{figure.caption.17}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces JointD+KATT、JointE+KATT、CNN+ATT、CNN+ONE、MIML、MultiR、Mintz 与 Sm2r 的准确率/召回率曲线\relax }}{39}{figure.caption.20}
+\contentsline {figure}{\numberline {A-1}{\ignorespaces Simple illustration of TransR.\relax }}{55}{figure.caption.35}
+\contentsline {figure}{\numberline {A-2}{\ignorespaces TransE, TransH 和 TransR 在关系抽取任务上的准确召回率曲线。\relax }}{67}{figure.caption.41}

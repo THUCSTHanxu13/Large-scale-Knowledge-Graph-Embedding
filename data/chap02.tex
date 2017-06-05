@@ -7,30 +7,89 @@
 
 为了将知识图谱纳入到这些应用程序中去，我们需要将实体和关系嵌入到低维空间中以向量形式作为输入。与此同时，虽然大多数现有的知识图谱规模都很庞大，但是它们离完善还差的很远。近年来的工作中，图谱填充的主要方法也是将知识图谱嵌入到低维空间进行信息推理和抽取。出于这些需求，大量的知识图谱表示学习方法被提出，并试图用合理的方式将实体和关系在网络结构上的组成嵌入到连续的低维空间中。比较有代表性的算法有基于图结构的模型\cite{lao2010relational,lao2011random}，基于张量的模型\cite{socher2013reasoning, nickel2016holographic}，基于平移的模型\cite{bordes2013translating,ji2015knowledge,ji2016knowledge}。TransE \cite{bordes2013translating}是一个典型的基于平移的模型，它将每个事实$(h,r,t)$中的关系$r$视为空间中$h$到$t$的向量平移，即$\textbf{h} + \textbf{r} = \textbf{t}$。因为TransE是一种具有良好性能且高效的方法，之后有大量的拓展模型出现，代表包括TransH \cite{wang2014transh}，TransR \cite{lin2015learning}以及TransD \cite{ji2015knowledge}。
 
+虽然这些基于平移的知识图谱表示学习模型在较小规模的标准数据集合上取得了非常优异的结果，但是这些模型的现有实现都是基于单线程的。这意味着如果将这些模型应用到现实中大规模的知识图谱上，训练过程的耗时将会非常惊人，即使模型自身结构非常优异也很难在有大规模嵌入需求的实际场景下发挥作用。为了能够真正做到大规模知识图谱表示学习，我们在已有模型的基础上提出了一个高速并行的训练框架以及配套的优化方法，做到了不影响模型结果却能极大提升训练效率。我们的工作基于三个方面进行展开。首先，我们设计了一个统一的框架来加速基于平移的知识表示模型 TransE 及其扩展模型 \footnote{https://github.com/thunlp/Fast-TransX}。该框架会将知识图谱整体划分为若干个部分交给不同线程进行并发处理，从而将模型以多线程的形式出现。除此以外，在框架之中，我们还提出了基于位移的负例采样算法来替代原始负采样算法。新的采样机制可以合并算术运算以进行模型加速。第二，对于某些具体的模型，我们还通过TensorFlow \cite{Abadi2016TensorFlow}来实现它们，从而在我们框架的基础上构建出一个方便的平台来进行GPU计算 \footnote{https://github.com/thunlp/TensorFlow-TransX}。第三，除了发布了框架对应的工具包，我们还提供了大型知识图谱预先训练好的嵌入表示，这些嵌入向量可以直接应用于其他的应用中。
 
-
-% 虽然这些翻译模型在小型基准数据集上取得了很好的成绩，但是这些模型的现有实现通常是单线程的，而且对于训练来说非常耗时，这对于嵌入大规模的KG来说是不太好的。为了学习大规模知识图嵌入，我们提出了一些优化方法。我们工作的优化方法有三个方面。首先，我们设计一个统一的框架来加速TransE及其扩展。该框架将KG整体分为几个部分，并采用这些模型进行多线程训练。我们还提出了基于偏移的负采样来替代原始负采样算法。新的采样机制可以合并算术运算以加速。其次，对于某些具体的模型，我们还通过TensorFlow \ Abite2016TensorFlow}来实现它们，基于我们的框架构建一个方便的平台来运行GPU上的模型\ footnote {https://github.com/thunlp/TensorFlow-TransX}。第三，除了工具包，我们还通过这个框架提供了大型KG的预先训练的嵌入。嵌入可以直接用于其他作品。
-
-
-% Although these translating models have achieved great results on small benchmark datasets, the existing implementations of these models are often single-thread and very time-consuming for training, which can not work well for embedding large-scale KGs. To learn large-scale knowledge graph embeddings, we propose some optimization methods. The optimization methods of our works are threefold. First, we design a unified framework to accelerate TransE and its extensions. The framework separates the overall KG into several parts and adopts these models for multi-threading training. We also propose the offset-based negative sampling to replace origin negative sampling algorithms in this framework. The new sampling mechanism can merge arithmetic operations for acceleration. Second, for some specific models, we also implement them by TensorFlow \cite{Abadi2016TensorFlow} based on our framework to build a convenient platform to run models on GPUs \footnote{https://github.com/thunlp/TensorFlow-TransX}. Third, besides the toolkits, we also provide pre-trained embeddings of large-scale KGs by this framework. The embeddings can be used directly for other works.
-
-% We name our works as OpenKE. The experiment results show that OpenKE achieves great speedup ratio without harming the accuracy and efficient enough to learn large-scale KGs.
+为了简单起见，我们将我们的框架命名为OpenKE（Open Framework for Knowledge Embedding），即开放知识图谱嵌入框架。除了理论描述外，实验的结果也表明 OpenKE 获得了极好的加速比，且在数据集合上没有降低知识图谱表示学习的准确率和有效性。
 
 
 \section{相关工作}
 
-    \subsection{早期的表示模型}
-  
-    \subsection{基于张量的表示模型}
-%       \subsubsection{RESACL}
-%       \subsubsection{NTN}
-%       \subsubsection{Hole}
-%     \subsection{基于平移的表示模型}
-%       \subsubsection{TransE}
-%       \subsubsection{TransH}
-%       \subsubsection{TransR}
-%       \subsubsection{TransD}
 
+    \subsection{早期的知识图谱表示模型}
+
+      \subsubsection{UM} 
+
+      UM \cite{bordes2012joint,bordes2014semantic}是一个极其简单的知识图谱表示学习模型，其主要特征就是将所有的特征都嵌入到实体向量上，整体的形式表达如下，
+      \begin{equation}
+      f_r(h, t) =  \|\mathbf{h} - \mathbf{t}\|_{2}^{2}
+      \end{equation}
+      这与网络向量表示很相似，模型要求内部存在关联的实体在空间上的向量尽可能接近。然而，这样的模型无法在知识图谱上处理实体间的多关系问题。
+
+      \subsubsection{SE} 
+
+      SE \cite{bordes2011learning} 是在 UM 的基础上改进的一个模型。SE 为头实体和尾实体设计了不同的变换矩阵，从而能够将关系性质引入到模型中，整体的形式表达如下，
+      \begin{equation}
+      f_r(h, t) =  \| \mathbf{M}_{r, h} \mathbf{h} - \mathbf{M}_{r, t} \mathbf{t} \|_1
+      \end{equation}
+      这里$\mathbf{M}_{r, h}$和$\mathbf{M}_{r, t}$是变换矩阵，整体的能量函数也是基于$L_1$距离的形式。与 UM 相比，由于 SE 使用两个独立的变换矩阵，可以进行关系的特征提取，但这样的形式仍然很难精确捕捉实体与关系的内在联系。
+
+      \subsubsection{SLM}
+      SLM 将神经网络引入了知识图谱表示学习模型中，尝试使用单层网络来进行实体和关系的表示，整体的形式表达如下，
+      \begin{equation}
+      f_{r}(h, t) = \mathbf{u}_r^\top g (\mathbf{M}_{r, h} \mathbf{h} + \mathbf{M}_{r, t} \mathbf{t})，
+      \end{equation}
+      这里$\mathbf{M}_{r, h}$和$\mathbf{M}_{r, t}$是权重矩阵，$g()$是$\tanh$操作，即神经网络的激活层。相比较于之前的简单模型，单层神经网络模型的表达能力要强许多，但训练时间上的开销以及实际效果上的性价比都限制了 SLM 的使用和发展。
+
+      \subsubsection{SME} 
+      SME \cite{bordes2012joint,bordes2014semantic} 通过多重矩阵变换和哈达玛积来获取实体和关系之间的相关性。Bordes\cite{bordes2014semantic}在其工作中，又进一步将 SME 的双线性形式变为三维张量形式来计算。在 SME 中关系具有单独的嵌入表示，并通过线性矩阵变换与实体向量进行相互作用。SME 定义了两种形式的能量函数，包括线性形式：
+      \begin{equation}
+      f_r(h, t) = (\mathbf{M}_{h} \mathbf{h} + \mathbf{M}_{hr} \mathbf{r} + \mathbf{b}_h )^{\top} (\mathbf{M}_{t} \mathbf{t} + \mathbf{M}_{tr} \mathbf{r} + \mathbf{b}_t)，
+      \end{equation}
+      和双线性形式：
+      \begin{equation}
+      f_r(h, t) = \big( (\mathbf{M}_{h} \mathbf{h}) \otimes (\mathbf{M}_{hr} \mathbf{r}) + \mathbf{b}_h \big)^{\top} \big( (\mathbf{M}_{t} \mathbf{t}) \otimes (\mathbf{M}_{tr} \mathbf{r}) + \mathbf{b}_t \big)，
+      \end{equation}
+      这里$\mathbf{M}_{h}$，$\mathbf{M}_{hr}$，$\mathbf{M}_{t}$和$\mathbf{M}_{tr}$是权重矩阵，$\otimes$是哈达玛积，$\mathbf{b}_h$和$\mathbf{b}_t$是线性偏移量。
+
+      \subsubsection{LFM} 
+      LFM \cite{jenatton2012latent,sutskever2009modelling} 使用了双线性变换来评估实体与关系之间的潜在关联及语义相关，整体的形式表达如下，
+      \begin{equation}
+      f_r(h, t) = \mathbf{h}^{\top}\mathbf{M}_r\mathbf{t}
+      \end{equation}
+      这里$\mathbf{M}_r$是双线性变换矩阵，非常简洁的利用实体在不同关系上的协同性质来学习嵌入表示。
+
+    \subsection{基于张量与矩阵分解的知识图谱表示模型}
+
+      \subsubsection{RESACL}
+      RESCAL \cite{nickel2011three,nickel2012factorizing} 是一个经典的基于矩阵分解的知识图谱表示学习模型。RESCAL 将知识图谱表示为一个三维张量，而三个维度分别表示头实体、尾实体以及关系。如果一个三元组在知识图谱中存在，那么在张量空间三元组对应位置被置为1，反之则是0。将图谱张量分解之后可以获得两个一维向量以及一个二维矩阵，从而获得实体与关系的低维向量表示，其具体形式表达如下，
+      \begin{equation}
+      f_r(h, t) = \mathbf{h}^{\top}\mathbf{M}_r\mathbf{t}
+      \end{equation}
+      值得注意的是RESCAL的这个形式和LFM是一致的，但是却是通过矩阵分解求得的，两者在训练的损失函数上有显著差别。
+
+      \subsubsection{NTN}
+      NTN \cite{socher2013reasoning} 是在 SLM 的基础上提出的张量神经模型，并且定义了一个表达能力比 SLM 更为丰富的能量函数，
+      \begin{equation}
+        f_{r}(h, t) = \mathbf{u}_r^\top g (\mathbf{h}^{\top} \mathbf{M}_r \mathbf{t} + \mathbf{M}_{r, h} \mathbf{h} + \mathbf{M}_{r, t}\mathbf{t} + \mathbf{b}_r)，
+      \end{equation}
+      这里，$\mathbf{u}_r$是一个图谱中关系的向量表示，$g()$是用来激活信号的$\tanh$操作，$\mathbf{M}_r \in \mathbb{R}^{d \times d \times k}$是一个三维的张量，$\mathbf{M}_{r, h}, \mathbf{M}_{r, t} \in  \mathbb{R}^{k\times d}$则是线性变换矩阵。和 SLM 一样，NTN 表达能力非常强，模型复杂度也非常高。因为涉及张量的计算，巨大的计算量使得 NTN 很难在大规模知识图谱上被应用。
+      
+      \subsubsection{HOLE}
+
+      HOLE \cite{nickel2016holographic} 提出了全息向量的概念，
+
+
+    \subsection{基于平移的知识图谱表示模型}
+
+      \subsubsection{TransE}
+      %       文献[63]受到平移不变现象的启发，提出了 TransE模型，即将知识库中实体之间的关系看成是 从实体间的某种平移，并用向量表示。关系lr 可以 看作是从头实体向量 lh 到尾实体向量 lt 的翻译。对 于知识库中的每个三元组(h,r,t)，TransE都希望满足 以下关系: lh + lr ≈ lt ，其损失函数为: fr (h,t) =
+      % | lh + lr − lt |L1 / L2 ，即向量 lh + lr 和 lt 的 L1 或 L2 距离。
+      % 该模型的参数较少，计算的复杂度显著降低。与此 同时，TransE模型在大规模稀疏知识库上也同样具
+      % 第4期 有较好的性能与可扩展性。
+      \subsubsection{TransH}
+      \subsubsection{TransR}
+      \subsubsection{TransD}
+      \subsubsection{TransE 的其他拓展模型}
 
 
 \section{算法框架}
@@ -262,7 +321,7 @@ WN18   & 18           & 40943            & 141442  &5000 &5000 \\ \hline
   \caption{WN18、FB15K上链接预测结果}  
   % \fontsize{7}{9}\selectfont  
   \label{tab2:performance_comparison1}  
-  \scalebox{0.94}{
+  \scalebox{0.8}{
     \begin{tabular}{|c|c c|c c|c|c c|c c|c|}  
     \hline    
     数据集合&\multicolumn{5}{c|}{WN18}&\multicolumn{5}{c|}{FB15K}\\\cline{1-11}

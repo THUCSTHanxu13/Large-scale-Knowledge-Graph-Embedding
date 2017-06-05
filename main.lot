@@ -1,11 +1,11 @@
-\contentsline {table}{\numberline {2.1}{\ignorespaces FB15K 和 WN18 的数据细节\relax }}{13}{table.caption.12}
-\contentsline {table}{\numberline {2.2}{\ignorespaces WN18、FB15K上链接预测结果\relax }}{16}{table.caption.13}
-\contentsline {table}{\numberline {3.1}{\ignorespaces FB15K 与 FB60K 的数据细节\relax }}{33}{table.caption.18}
-\contentsline {table}{\numberline {3.2}{\ignorespaces 联合学习框架参数设置\relax }}{35}{table.caption.19}
-\contentsline {table}{\numberline {3.3}{\ignorespaces 不同模型组合情况下的 P@N 评估结果(\%).\relax }}{37}{table.caption.21}
-\contentsline {table}{\numberline {3.4}{\ignorespaces 头尾实体链接预测的结果(\%).\relax }}{40}{table.caption.22}
-\contentsline {table}{\numberline {A-1}{\ignorespaces WN18、FB15K、WN11、FB40K 的数据细节\relax }}{59}{table.caption.36}
-\contentsline {table}{\numberline {A-2}{\ignorespaces 链接预测的评测结果。\relax }}{60}{table.caption.37}
-\contentsline {table}{\numberline {A-3}{\ignorespaces 将关系分类后在 FB15K 上的评测结果。($\%$)\relax }}{61}{table.caption.38}
-\contentsline {table}{\numberline {A-4}{\ignorespaces $\delimiter "426830A $头实体, 尾实体$\delimiter "526930B $对于``location\_location\_contains''关系聚类的样例。\relax }}{61}{table.caption.39}
-\contentsline {table}{\numberline {A-5}{\ignorespaces 三元组分类的评测结果。 ($\%$)\relax }}{63}{table.caption.40}
+\contentsline {table}{\numberline {2.1}{\ignorespaces FB15K 和 WN18 的数据细节\relax }}{17}{table.caption.12}
+\contentsline {table}{\numberline {2.2}{\ignorespaces WN18、FB15K上链接预测结果\relax }}{19}{table.caption.13}
+\contentsline {table}{\numberline {3.1}{\ignorespaces FB15K 与 FB60K 的数据细节\relax }}{36}{table.caption.18}
+\contentsline {table}{\numberline {3.2}{\ignorespaces 联合学习框架参数设置\relax }}{38}{table.caption.19}
+\contentsline {table}{\numberline {3.3}{\ignorespaces 不同模型组合情况下的 P@N 评估结果(\%).\relax }}{40}{table.caption.21}
+\contentsline {table}{\numberline {3.4}{\ignorespaces 头尾实体链接预测的结果(\%).\relax }}{43}{table.caption.22}
+\contentsline {table}{\numberline {A-1}{\ignorespaces WN18、FB15K、WN11、FB40K 的数据细节\relax }}{62}{table.caption.36}
+\contentsline {table}{\numberline {A-2}{\ignorespaces 链接预测的评测结果。\relax }}{63}{table.caption.37}
+\contentsline {table}{\numberline {A-3}{\ignorespaces 将关系分类后在 FB15K 上的评测结果。($\%$)\relax }}{64}{table.caption.38}
+\contentsline {table}{\numberline {A-4}{\ignorespaces $\delimiter "426830A $头实体, 尾实体$\delimiter "526930B $对于``location\_location\_contains''关系聚类的样例。\relax }}{64}{table.caption.39}
+\contentsline {table}{\numberline {A-5}{\ignorespaces 三元组分类的评测结果。 ($\%$)\relax }}{66}{table.caption.40}
