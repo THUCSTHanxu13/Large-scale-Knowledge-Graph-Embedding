@@ -1,0 +1,10 @@
+You can run the program directly with the default parameters. If you want to change the parameters, you can change them as follows:
+self.hidden_sizeE //the dimension of entity embeddings
+self.hidden_sizeR //the dimension of relation embeddings
+self.nbatches //rounds you want to traverse
+self.margin //You can know more about the margin from the paper
+self.L1_flag //True means the score functions will be calculated under l1 distance, False means be calculated under l2 distance.
+
+
+
+
