@@ -76,20 +76,33 @@
       
       \subsubsection{HOLE}
 
-      HOLE \cite{nickel2016holographic} 提出了全息向量的概念，
-
+      HOLE \cite{nickel2016holographic} 提出了全息向量的概念来提取特征。所谓的全息向量就是在进行空间运算时，向量的任意两维都会发生作用。而在传统的空间内，诸如点积这样的运算操作都是针对对应位而进行的。全息向量的设定使得实体内部的关联可以更好的被表达。具体的能量函数的形式如下，
+      \begin{equation}
+        f_{r}(h, t) = \mathbf{r}^\top (\mathbf{h} \star \mathbf{t})，
+      \end{equation}
+      这里$\star$是一个定义的二元运算符，表示向量的相关性操作，也可以理解为循环卷积，具体可划归为，
+      \begin{equation}
+        \mathbf{h} \star \mathbf{t} = \mathcal{F}^{-1}(\overline{\mathcal{F}(\mathbf{h})} \odot \mathcal{F}(\mathbf{t}))
+      \end{equation}
+      这里$\mathcal{F}()$是快速傅里叶操作 FFT，$\overline{\textbf{x}}$是复向量$\textbf{x}$的共轭向量，$\odot$则是哈达玛积操作。
 
     \subsection{基于平移的知识图谱表示模型}
 
       \subsubsection{TransE}
-      %       文献[63]受到平移不变现象的启发，提出了 TransE模型，即将知识库中实体之间的关系看成是 从实体间的某种平移，并用向量表示。关系lr 可以 看作是从头实体向量 lh 到尾实体向量 lt 的翻译。对 于知识库中的每个三元组(h,r,t)，TransE都希望满足 以下关系: lh + lr ≈ lt ，其损失函数为: fr (h,t) =
-      % | lh + lr − lt |L1 / L2 ，即向量 lh + lr 和 lt 的 L1 或 L2 距离。
-      % 该模型的参数较少，计算的复杂度显著降低。与此 同时，TransE模型在大规模稀疏知识库上也同样具
-      % 第4期 有较好的性能与可扩展性。
-      \subsubsection{TransH}
-      \subsubsection{TransR}
-      \subsubsection{TransD}
+
+       正如我们在前文中介绍的那样，TransE \cite{bordes2013translating} 希望图谱中的三元组$(h, r, t)$满足平移性质，即$\mathbf{h} + \mathbf{r} \approx \mathbf{t}$。因此，TransE 定义了这样一个能量函数：
+        \begin{equation}
+        f_{r}(h, t) = \lVert \mathbf{h} + \mathbf{r} - \mathbf{t} \rVert_{L1/L2}
+        \end{equation}
+       函数值越低代表$(h, r, t)$存在的可能性越大，反之亦然。TransE虽然形式非常简单，但效果非常理想，且时间复杂度相比于其他模型也非常优秀。在 TransE 之后大量的拓展模型也被陆续提出，所以在我们的框架主要围绕 TransE 及其拓展模型展开构建。
+
+      \subsubsection{TransH、TransR、TransD}
+
+      为了解决 TransE 在一对多、多对一、多对多关系上的存在的问题，TransH \cite{wang2014knowledge}被提了出来，并用以将实体在不同关系的环境下嵌入不同的分布式表示向量里去。其基本思想是将实体向量映射到关系的超平面上，在每个关系的超平面上进行平移操作，从而使得实体在不同关系下有不同的语义表示。TransR 则更进一步，将实体与关系安置在不同空间进行训练，通过转移矩阵将实体映射到关系空间内进行平移操作。TransD 则是在TransR的基础上限定了转换矩阵的形式，并将矩阵运算划归为向量运算。这些算法的本质都是试图赋予实体更为丰富的语义信息，具体的模型我们会在章节\ref{ch2:knowledgemodels}中详细介绍。
+
       \subsubsection{TransE 的其他拓展模型}
+
+      在TransR的基础上，TranSparse \cite{ji2016knowledge} 将变换矩阵设定为稀疏矩阵，且稀疏特性与实体、关系的出现频率有关，由此解决计算效率和过拟合的问题。TransG \cite{xiao2015transg} 则是考虑关系的多样性，即一个关系可能以多种语义形式存在。TransG 为关系的每一个语义都定义了一个高斯分布表示，并且使用高斯混合模型来对知识图谱中的三元组进行表示学习。
 
 
 \section{算法框架}
@@ -109,6 +122,7 @@
 我们将整个知识图谱定义为一个由实体集、关系集和事实三元组集合共同组成的大集合，即$G = \{E, R, T\}$，这里$E$、$R$和$T$分别表示实体集合、关系集合和事实三元组集合。对于事实三元组集合中的任意事实$(h, r, t) \in T$，这个三元组表明头实体$h \in E$和尾实体$t \in E$之间存在一个逻辑上的关联$r \in R$。由于表示学习会将实体和关系都嵌入到连续空间中去并用对应的向量来表示他们的语义信息，所以对于任意的实体或者关系$h, t \in E$或$r \in R$，我们都用它们的加粗字母$\mathbf{h}, \mathbf{t}, \mathbf{r}$来表示它们的向量，这里的向量也可以称为嵌入、嵌入向量、表示、嵌入表示等。
 
 \subsection{知识图谱表示学习模型}
+\label{ch2:knowledgemodels}
 
 对于知识图谱表示学习，模型需要做的就是将实体和关系嵌入到连续空间中，从而利用空间向量来表达它们之间存在的语义关联。在这里，我们先以一个统一的数学视角来归纳这些模型方法，从而方便之后在底层上进行统一的实现。然后我们接着给出在具体实现时，以 TransE 为代表的平移模型各自之间的不同之处。
 

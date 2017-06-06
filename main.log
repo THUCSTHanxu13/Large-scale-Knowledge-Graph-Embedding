@@ -1,8 +1,8 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.16)  5 JUN 2017 20:17
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.16)  6 JUN 2017 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
+**main
 (./main.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
@@ -2410,107 +2410,108 @@ LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
-\T1/ntxtlf/m/n/9.03374 YAGO: http://www.mpi-inf.mpg.de/departments/databases-an
-d-information-systems/research/yago-
- []
-
 File: figures/ch1/KG_example.png Graphic file (type QTm)
-<use  "figures/ch1/KG_example.png" >
+ <use  "figures/ch1/KG_example.png" >
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 11.04124pt on input line 21.
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 21
-.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 11.04124pt on input line 21.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.06006pt on input line 21.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.07271pt on input line 21.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 11.04124pt on input line 21.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.06006pt on input line 21.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.07271pt on input line 21.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.06006pt on input line 21.
+(Font)              scaled to size 11.04124pt on input line 18.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.045pt on input line 25.
- [2] [3]) [4]
+(Font)              scaled to size 12.045pt on input line 24.
+ [2]
+File: figures/ch1/knowledge.png Graphic file (type QTm)
+
+<use  "figures/ch1/knowledge.png" > [3]
+File: figures/ch1/space.png Graphic file (type QTm)
+ <use  "figures/ch1/space.png" >
+[4] [5]) [6]
 \openout2 = `data/chap02.aux'.
 
  (./data/chap02.tex
 第2章
-
-Package natbib Warning: Citation `ji2016knowledge' on page 5 undefined on input
- line 8.
-
-[5
+[7
 
 
 
 ]
 Package hyperref Info: bookmark level for unknown equation defaults to 0 on inp
 ut line 25.
- [6]
+ [8]
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
- [7]
+ [9]
 Underfull \hbox (badness 1472) in paragraph at lines 64--65
 []\T1/ntxtlf/m/n/12.045 RESCAL$[]$ \EU1/STSong(0)/m/n/12.045 是 一 个 经 典 的 基 于 矩 
 阵 分 解 的 知 识 图 谱 表 示 学 习 模 型。|
  []
 
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
-[8]
+[10]
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+ [11]
 File: figures/ch2/3.jpg Graphic file (type QTm)
  <use  "figures/ch2/3.jpg" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9] [10] [11] [12]
+[12] [13] [14] [15] [16]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 195.
+put line 211.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 228.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 244.
 
-[13] [14] [15] [16] [17] [18]
+[17] [18] [19]
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 30
+7.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 11.04124pt on input line 307.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.06006pt on input line 307.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.07271pt on input line 307.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 11.04124pt on input line 307.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 8.06006pt on input line 307.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 6.07271pt on input line 307.
+ [20] [21]
 File: figures/ch2/FB15-transE-loss.png Graphic file (type QTm)
  <use  "figures/ch2/FB15-transE-loss.png" >
 File: figures/ch2/FB15K-transR-speedup.png Graphic file (type QTm)
 
 <use  "figures/ch2/FB15K-transR-speedup.png" >
-Overfull \hbox (1.80669pt too wide) in paragraph at lines 351--365
+Overfull \hbox (1.80669pt too wide) in paragraph at lines 367--381
 []$[]$ $[]$ 
  []
 
-[19] [20]) [21]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[22] [23]) [24] [25]
 \openout2 = `data/chap03.aux'.
 
  (./data/chap03.tex
 第3章
-[22
+[26
 
 
 
-] [23] [24]
+] [27] [28]
 File: figures/ch3/joint.jpg Graphic file (type QTm)
  <use  "figures/ch3/joint.jpg" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25] [26] [27] [28] [29]
+[29] [30] [31] [32] [33]
 File: figures/ch3/cnn.jpg Graphic file (type QTm)
  <use  "figures/ch3/cnn.jpg" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[30] [31] [32]
+[34] [35] [36]
 File: figures/ch3/cnn_concrete.png Graphic file (type QTm)
- <use  "figures/ch3/cnn_concrete.png" > [33] [34] [35] [36]
+ <use  "figures/ch3/cnn_concrete.png" > [37] [38] [39] [40]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 9.03374pt on input line 275.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
@@ -2520,23 +2521,23 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 5.0pt on input line 275.
 
-[37]
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 311--312
 []\EU1/STSong(0)/m/n/12.045 在 \T1/ntxtlf/m/n/12.045 NYT-FB60K \EU1/STSong(0)/m/
 n/12.045 数 据 集 上 的 测 试 结 果 都 被 罗 列 在 图[]\T1/ntxtlf/m/n/12.045 3.4[]\EU1/STSong(
 0)/m/n/12.045 中。|  图 中
  []
 
-[38]
+[42]
 File: figures/ch3/res.eps Graphic file (type eps)
- <figures/ch3/res.eps> [39]
+ <figures/ch3/res.eps> [43]
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <11.04124> not availabl
 e
 (Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 335.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 11.04124pt on input line 335.
- [40] [41]
+ [44] [45]
 Missing character: There is no （ in font ntx-Regular-tlf-ot1!
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
@@ -2545,16 +2546,18 @@ Missing character: There is no （ in font ntx-Regular-tlf-ot1!
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
 Missing character: There is no ） in font ntx-Regular-tlf-ot1!
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.06006pt on input line 408.
 
 Overfull \hbox (4.551pt too wide) in paragraph at lines 408--410
  [][] 
  []
 
-[42] [43]) [44] (./main.lof)
+[46] [47]) [48] (./main.lof)
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [45
+ [49
 
 
 
@@ -2563,44 +2566,44 @@ Overfull \hbox (4.551pt too wide) in paragraph at lines 408--410
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [46
+ [50
 
 
-] (./main.loe [47
+] (./main.loe [51
 
 
-] [48])
+] [52])
 \tf@loe=\write7
 \openout7 = `main.loe'.
 
 
-(./main.bbl [49]
+(./main.bbl [53]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.53937pt on input line 1.
- [50
+ [54
 
 
-] [51]) [52]
+] [55]) [56]
 \openout2 = `data/ack.aux'.
 
- (./data/ack.tex [53
+ (./data/ack.tex [57
 
 
 
-]) [54
+]) [58
 
 
 ]
 (./data/appendix01.tex
 附录 A
 File: figures/trans/model_idea.pdf Graphic file (type QTm)
-<use  "figures/trans/model_idea.pdf" > [55
+<use  "figures/trans/model_idea.pdf" > [59
 
 
-] [56]
+] [60]
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
 Missing character: There is no 。 in font ntx-Regular-tlf-ot1!
- [57]
+ [61]
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
 
 *************************************************
@@ -2614,23 +2617,23 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
- [58]
+ [62]
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
- [59]
+ [63]
 Missing character: There is no 。 in font ntx-Regular-tlf-ot1!
 Missing character: There is no 。 in font ntx-Regular-tlf-ot1!
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
 
-[60]
+[64]
 Missing character: There is no ， in font ntx-Regular-tlf-ot1!
- [61] [62]
+ [65] [66]
 Overfull \hbox (11.15068pt too wide) in paragraph at lines 210--233
  [][] 
  []
 
-[63] [64] [65] [66]
+[67] [68] [69] [70]
 File: figures/trans/RE_text.pdf Graphic file (type QTm)
- <use  "figures/trans/RE_text.pdf" > [67])
+ <use  "figures/trans/RE_text.pdf" > [71])
 File: figures/scan-record.pdf Graphic file (type QTm)
 
 <use  "figures/scan-record.pdf" >
@@ -2641,7 +2644,7 @@ File: figures/scan-record.pdf Graphic file (type QTm)
 <use  "figures/scan-record.pdf"  page1>
 File: figures/scan-record.pdf Graphic file (type QTm)
 
-<use  "figures/scan-record.pdf"  page1> [68]
+<use  "figures/scan-record.pdf"  page1> [72]
 File: figures/scan-record.pdf Graphic file (type QTm)
 
 <use  "figures/scan-record.pdf"  page1>
@@ -2650,7 +2653,7 @@ File: figures/scan-record.pdf Graphic file (type QTm)
 <use  "figures/scan-record.pdf"  page1>
 File: figures/scan-record.pdf Graphic file (type QTm)
 
-<use  "figures/scan-record.pdf"  page1> [69]
+<use  "figures/scan-record.pdf"  page1> [73]
 File: figures/scan-record.pdf Graphic file (type QTm)
 
 <use  "figures/scan-record.pdf"  page2>
@@ -2659,28 +2662,28 @@ File: figures/scan-record.pdf Graphic file (type QTm)
 <use  "figures/scan-record.pdf"  page2>
 File: figures/scan-record.pdf Graphic file (type QTm)
 
-<use  "figures/scan-record.pdf"  page2> [70]
+<use  "figures/scan-record.pdf"  page2> [74]
 \tf@thm=\write8
 \openout8 = `main.thm'.
 
-
-
-Package natbib Warning: There were undefined citations.
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
-(./main.aux (./data/chap01.aux) (./data/chap02.aux) (./data/chap03.aux)
-(./data/ack.aux))
+ (./main.aux (./data/chap01.aux)
+(./data/chap02.aux) (./data/chap03.aux) (./data/ack.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 88.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 88.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 35812 strings out of 493591
- 663713 string characters out of 6143546
- 687111 words of memory out of 5000000
- 38662 multiletter control sequences out of 15000+600000
+ 35835 strings out of 493591
+ 664633 string characters out of 6143546
+ 688197 words of memory out of 5000000
+ 38684 multiletter control sequences out of 15000+600000
  111730 words of font info for 160 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 70i,18n,96p,10437b,718s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,18n,96p,10433b,718s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (79 pages).
+Output written on main.pdf (83 pages).

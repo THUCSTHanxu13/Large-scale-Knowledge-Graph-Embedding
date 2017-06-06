@@ -77,6 +77,12 @@ Ji G, He S, Xu L, et~al.
 \newblock  Proceedings of ACL, 2015
 \thudot
 
+\bibitem{ji2016knowledge}
+Ji G, Liu K, He S, et~al.
+\newblock Knowledge graph completion with adaptive sparse transfer matrix.
+\newblock  Proceedings of AAAI, 2016
+\thudot
+
 \bibitem{wang2014transh}
 Wang Z, Zhang J, Feng J, et~al.
 \newblock Knowledge graph embedding by translating on hyperplanes.
@@ -94,6 +100,68 @@ Lin Y, Liu Z, Sun M, et~al.
 Abadi M, Barham P, Chen J, et~al.
 \newblock Tensorflow: A system for large-scale machine learning.
 \newblock 2016.
+\thudot
+
+\bibitem{bordes2012joint}
+Bordes A, Glorot X, Weston J, et~al.
+\newblock Joint learning of words and meaning representations for open-text
+  semantic parsing.
+\newblock  Proceedings of AISTATS, 2012
+\thudot
+
+\bibitem{bordes2014semantic}
+Bordes A, Glorot X, Weston J, et~al.
+\newblock A semantic matching energy function for learning with
+  multi-relational data.
+\newblock Machine Learning, 2014, 94(2):233--259
+\thudot
+
+\bibitem{bordes2011learning}
+Bordes A, Weston J, Collobert R, et~al.
+\newblock Learning structured embeddings of knowledge bases.
+\newblock  Proceedings of AAAI, 2011
+\thudot
+
+\bibitem{jenatton2012latent}
+Jenatton R, Roux N~L, Bordes A, et~al.
+\newblock A latent factor model for highly multi-relational data.
+\newblock  Proceedings of NIPS, 2012.
+\newblock  3167--3175
+\thudot
+
+\bibitem{sutskever2009modelling}
+Sutskever I, Tenenbaum J~B, Salakhutdinov R.
+\newblock Modelling relational data using bayesian clustered tensor
+  factorization.
+\newblock  Proceedings of NIPS, 2009.
+\newblock  1821--1828
+\thudot
+
+\bibitem{nickel2011three}
+Nickel M, Tresp V, Kriegel H~P.
+\newblock A three-way model for collective learning on multi-relational data.
+\newblock  Proceedings of ICML, 2011.
+\newblock  809--816
+\thudot
+
+\bibitem{nickel2012factorizing}
+Nickel M, Tresp V, Kriegel H~P.
+\newblock Factorizing yago: scalable machine learning for linked data.
+\newblock  Proceedings of WWW, 2012.
+\newblock  271--280
+\thudot
+
+\bibitem{wang2014knowledge}
+Wang Z, Zhang J, Feng J, et~al.
+\newblock Knowledge graph embedding by translating on hyperplanes.
+\newblock  Proceedings of AAAI, 2014.
+\newblock  1112--1119
+\thudot
+
+\bibitem{xiao2015transg}
+Xiao H, Huang M, Hao Y, et~al.
+\newblock Transg: A generative mixture model for knowledge graph embedding.
+\newblock arXiv preprint arXiv:1509.05488, 2015.
 \thudot
 
 \bibitem{surdeanu2012multi}
@@ -116,24 +184,10 @@ Weston J, Bordes A, Yakhnenko O, et~al.
 \newblock  Proceedings of EMNLP, 2013
 \thudot
 
-\bibitem{wang2014knowledge}
-Wang Z, Zhang J, Feng J, et~al.
-\newblock Knowledge graph embedding by translating on hyperplanes.
-\newblock  Proceedings of AAAI, 2014.
-\newblock  1112--1119
-\thudot
-
 \bibitem{toutanova2015representing}
 Toutanova K, Chen D, Pantel P, et~al.
 \newblock Representing text for joint embedding of text and knowledge bases.
 \newblock  Proceedings of EMNLP, 2015
-\thudot
-
-\bibitem{nickel2011three}
-Nickel M, Tresp V, Kriegel H~P.
-\newblock A three-way model for collective learning on multi-relational data.
-\newblock  Proceedings of ICML, 2011.
-\newblock  809--816
 \thudot
 
 \bibitem{mintz2009distant}
@@ -221,19 +275,6 @@ Riedel S, Yao L, McCallum A.
 \newblock  Proceedings of ECMLPKDD, 2010
 \thudot
 
-\bibitem{bordes2011learning}
-Bordes A, Weston J, Collobert R, et~al.
-\newblock Learning structured embeddings of knowledge bases.
-\newblock  Proceedings of AAAI, 2011
-\thudot
-
-\bibitem{bordes2012joint}
-Bordes A, Glorot X, Weston J, et~al.
-\newblock Joint learning of words and meaning representations for open-text
-  semantic parsing.
-\newblock  Proceedings of AISTATS, 2012
-\thudot
-
 \bibitem{mikolov2013distributed}
 Mikolov T, Sutskever I, Chen K, et~al.
 \newblock Distributed representations of words and phrases and their
@@ -246,35 +287,6 @@ Mikolov T, Sutskever I, Chen K, et~al.
 Ritzema H, et~al.
 \newblock Drainage principles and applications.
 \newblock 1994
-\thudot
-
-\bibitem{bordes2014semantic}
-Bordes A, Glorot X, Weston J, et~al.
-\newblock A semantic matching energy function for learning with
-  multi-relational data.
-\newblock Machine Learning, 2014, 94(2):233--259
-\thudot
-
-\bibitem{jenatton2012latent}
-Jenatton R, Roux N~L, Bordes A, et~al.
-\newblock A latent factor model for highly multi-relational data.
-\newblock  Proceedings of NIPS, 2012.
-\newblock  3167--3175
-\thudot
-
-\bibitem{sutskever2009modelling}
-Sutskever I, Tenenbaum J~B, Salakhutdinov R.
-\newblock Modelling relational data using bayesian clustered tensor
-  factorization.
-\newblock  Proceedings of NIPS, 2009.
-\newblock  1821--1828
-\thudot
-
-\bibitem{nickel2012factorizing}
-Nickel M, Tresp V, Kriegel H~P.
-\newblock Factorizing yago: scalable machine learning for linked data.
-\newblock  Proceedings of WWW, 2012.
-\newblock  271--280
 \thudot
 
 \bibitem{bengio2003neural}

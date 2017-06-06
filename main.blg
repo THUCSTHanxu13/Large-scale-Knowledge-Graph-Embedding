@@ -7,47 +7,46 @@ A level-1 auxiliary file: data/chap03.aux
 The style file: thuthesis.bst
 A level-1 auxiliary file: data/ack.aux
 Database file #1: ref/refs.bib
-Warning--I didn't find a database entry for "ji2016knowledge"
 Warning--empty journal in Abadi2016TensorFlow
-You've used 44 entries,
+You've used 46 entries,
             2299 wiz_defined-function locations,
-            693 strings with 10672 characters,
-and the built_in function-call counts, 22421 in all, are:
-= -- 2173
-> -- 659
+            699 strings with 10955 characters,
+and the built_in function-call counts, 23252 in all, are:
+= -- 2248
+> -- 693
 < -- 9
-+ -- 308
-- -- 154
-* -- 1657
-:= -- 2981
-add.period$ -- 102
-call.type$ -- 44
-change.case$ -- 43
++ -- 324
+- -- 162
+* -- 1716
+:= -- 3101
+add.period$ -- 107
+call.type$ -- 46
+change.case$ -- 45
 chr.to.int$ -- 0
-cite$ -- 45
-duplicate$ -- 1742
-empty$ -- 2377
-format.name$ -- 197
-if$ -- 5150
+cite$ -- 47
+duplicate$ -- 1803
+empty$ -- 2463
+format.name$ -- 207
+if$ -- 5337
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 45
-newline$ -- 276
-num.names$ -- 44
-pop$ -- 262
+int.to.str$ -- 46
+missing$ -- 47
+newline$ -- 288
+num.names$ -- 46
+pop$ -- 272
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 436
+skip$ -- 453
 stack$ -- 0
-substring$ -- 2758
-swap$ -- 125
+substring$ -- 2842
+swap$ -- 126
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 229
-width$ -- 46
-write$ -- 504
-(There were 2 warnings)
+while$ -- 239
+width$ -- 48
+write$ -- 526
+(There was 1 warning)
