@@ -408,6 +408,13 @@ INPUT data/chap01.tex
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/tex-gyre/ec-qhvr.tfm
 INPUT figures/ch1/KG_example.png
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Italic-tlf-t1.tfm
+INPUT figures/ch1/knowledge.png
+INPUT figures/ch1/space.png
+OUTPUT data/chap02.aux
+INPUT data/chap02.tex
+INPUT data/chap02.tex
+INPUT figures/ch2/3.jpg
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
@@ -435,12 +442,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Italic-tlf-t1.tfm
-OUTPUT data/chap02.aux
-INPUT data/chap02.tex
-INPUT data/chap02.tex
-INPUT figures/ch2/3.jpg
 INPUT figures/ch2/FB15-transE-loss.png
 INPUT figures/ch2/FB15K-transR-speedup.png
 OUTPUT data/chap03.aux
@@ -470,6 +471,7 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT figures/ch3/res.eps
 INPUT figures/ch3/res.eps
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
 INPUT main.lof
 INPUT main.lof
 OUTPUT main.lof

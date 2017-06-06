@@ -109,8 +109,9 @@
 
 在这一章节内容里，我们主要介绍我们设计出的开放式知识图谱嵌入结构 OpenKE。内容包括 OpenKE 在并行模式下实现的大规模知识图谱表示学习框架，以及已有的知识图谱模型在框架 OpenKE 下进行实现和融合的具体方式和实施细节。整体的模型骨架我们可以在图\ref{fig2:openke}中看到。在整个框架中，底层操作和上层模型是独立的，上层模型可以自由选择和适配，而底层结构则是我们进行了大量优化之后的并行架构。进一步讲，这样一个解耦合的框架使得一个新提出的模型也可以在无需过多关注底层的情况下得到高效实现，具有高自由度和高效率的特点，这些都将在之后的内容里详细铺开。当然，在介绍具体细节之前，我们先引入一些符号体系和重要概念。
 
-
+\vspace{25pt}
 \begin{figure*}[h]
+\setlength{\abovecaptionskip}{30pt} 
 \centering
 \includegraphics[width=1.0\linewidth]{figures/ch2/3.jpg}
 \caption{基于并行的大规模知识图谱表示学习框架 OpenKE 的结构示意图}
@@ -206,7 +207,6 @@ S(h, r, t) = \lVert \textbf{h}_r + \textbf{r} - \textbf{t}_r \rVert_{L1/L2}
 \end{equation}
 这里$\textbf{r}_p$和$\textbf{h}_p, \textbf{t}_p$都是用来生成映射矩阵$\textbf{M}_{rh}$和$\textbf{M}_{rt}$的映射向量。通过这样的映射方式，矩阵运算变为了向量运算，在保持了一定映射性质的情况下加快了整体训练速度。
 
-
 \begin{algorithm}[t]
   \caption{并行学习伪代码}
   \label{algo1}
@@ -279,6 +279,7 @@ S(h, r, t) = \lVert \textbf{h}_r + \textbf{r} - \textbf{t}_r \rVert_{L1/L2}
 \end{algorithm}
 
 
+
 \subsection{基于位移的负例采样算法}
 
 对于 TransE 及其一系列的拓展模型，它们的优化过程都是以最小化其基于边界值的损失函数而进行的，即最小化式\ref{eq2:loss}。从大量的实践中我们发现，负例三元组的选择对最后的模型效果有着至关重要的影响。在前文介绍的负例三元组生成模式下，负例三元组集合$T'$是通过随机使用$E$中实体替换正例三元组的头尾实体来构建的。由于很多关系并不是一对一的模式，这意味着这套替换机制有可能用另一个正确的实体替换了当前的实体，$T'$中极有可能含有一些$T$中出现过的三元组。举个例子，替换机制将（\emph{美国}，\emph{总统}，\emph{奥巴马}）替换为（\emph{美国}，\emph{总统}，\emph{克林顿}），两者都是正确的三元组。在实际处理中，如果替换实体之后生成的三元组在$T$中出现，那么这个三元组将不会被用作负例来处理。因此，在原有的负例采样算法中我们会花费大量时间来检验采样出的三元组是否在$T$中出现。为了优化此处的时间复杂度，我们提出了基于位移的负例采样算法来直接生成负例而无需进行任何检验。我们以替换尾实体为例，将该算法伪代码罗列在算法\ref{algo2}中。
@@ -295,7 +296,9 @@ S(h, r, t) = \lVert \textbf{h}_r + \textbf{r} - \textbf{t}_r \rVert_{L1/L2}
 
 在实验中，我们选取了 FB15K 和 WN18 \footnote{https://everest.hds.utc.fr/doku.php?id=en:transe}这两个数据集合来进行测试。数据集合 FB15K 和 WN18 是知识图谱表示学习模型的主要评测基准，并在过去的大量工作中被广泛使用。这两个数据集合都是从公开的大型知识图谱中经过采样得到的子集，其中 FB15K 的内容是从 Freebase 中抽取出的，WN18 的内容是从 WordNet 中抽取出的。我们在表\ref{tab2:statistics-of-FB15K}中详细罗列了 FB15K 和 WN18 的整体数据细节。
 
+\vspace{25pt}
 \begin{table}[htb]
+\setlength{\abovecaptionskip}{30pt} 
 \centering
 \caption{FB15K 和 WN18 的数据细节}
 \scalebox{1.0}{
@@ -328,10 +331,11 @@ WN18   & 18           & 40943            & 141442  &5000 &5000 \\ \hline
 所有的实验结果都罗列在表\ref{tab2:performance_comparison1}之中。除此以外，我们还报告了在不同的线程设定之下，损失函数的下降曲线，不同模型在不同线程设置下的加速比，这些分别体现在图\ref{fig2:loss}和图\ref{fig2:speedup}中。
 
 
-
+\vspace{25pt}
 \begin{table*}[h]  
   % footnotesize
-  \centering  
+  \centering
+  \setlength{\abovecaptionskip}{30pt}   
   \caption{WN18、FB15K上链接预测结果}  
   % \fontsize{7}{9}\selectfont  
   \label{tab2:performance_comparison1}  
@@ -363,7 +367,9 @@ WN18   & 18           & 40943            & 141442  &5000 &5000 \\ \hline
     \end{tabular}}  
 \end{table*}
 
+\vspace{25pt}
 \begin{figure*}[h]
+\setlength{\abovecaptionskip}{30pt} 
 \begin{minipage}[]{0.5\linewidth}
 \centering
 \setcaptionwidth{2.8in}

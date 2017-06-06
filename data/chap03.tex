@@ -36,15 +36,19 @@
 
 注意力机制最早被Bahdanau\cite{bahdanau2014neural}在其神经机器翻译模型中使用，用来从神经网络的隐层向量里选择最重要的成分来强化训练且规避噪音。在关系抽取上，Lin\cite{lin2016neural}立足于以往的模型，通过跨句级别的注意力机制来减少远距离监督算法带入的噪音成分。在本工作中，我们提出了一种基于知识图谱的注意力机制。与Lin\cite{lin2016neural}不同，我们基于知识的注意力机制不是采用全局的注意力特征，而是使用图谱信息构建局部的注意力特征，这会在复杂的文本环境下更加有效和鲁棒。
 
-\section{算法框架}
-在这一章节的内容里，论文主要介绍我们提出的基于并行的知识图谱与文本模型联合学习框架。内容包括以下几点：（1）联合框架下知识图谱与文本表示的统一形式；（2）知识图谱表示学习模型；（2）文本关系表示学习模型；（3）基于知识的跨句注意力机制；（4）初始化及实现细节，整体的框架结构也可以在图\ref{fig3:joinglearning}中看到。从框架结构图中可以发现，在整个框架中，我们进行了大量的嵌入表示融合工作。这些融合工作包含了知识图谱与文本表示在模型形式上的统一，词与实体、关系与文本关系在嵌入向量上的统一等等。得益于这些统一的归纳与抽象，我们可以通过使用统一空间学习嵌入表示的方式来进行联合学习。联合学习支持模型间的参数共享，从而使得原本分离的模型在合并后可以相互影响并一定程度的促进各自效果提升。在介绍具体细节之前，我们仍然先引入一些符号体系和重要概念。
 
+\vspace{25pt}
 \begin{figure}[h]
+\setlength{\abovecaptionskip}{30pt} 
 \centering
-\includegraphics[width=0.9\columnwidth]{figures/ch3/joint.jpg}
+\includegraphics[width=0.8\columnwidth]{figures/ch3/joint.jpg}
 \caption{基于并行的知识图谱与文本模型联合学习框架}
 \label{fig3:joinglearning}
 \end{figure}
+
+
+\section{算法框架}
+在这一章节的内容里，论文主要介绍我们提出的基于并行的知识图谱与文本模型联合学习框架。内容包括以下几点：（1）联合框架下知识图谱与文本表示的统一形式；（2）知识图谱表示学习模型；（2）文本关系表示学习模型；（3）基于知识的跨句注意力机制；（4）初始化及实现细节，整体的框架结构也可以在图\ref{fig3:joinglearning}中看到。从框架结构图中可以发现，在整个框架中，我们进行了大量的嵌入表示融合工作。这些融合工作包含了知识图谱与文本表示在模型形式上的统一，词与实体、关系与文本关系在嵌入向量上的统一等等。得益于这些统一的归纳与抽象，我们可以通过使用统一空间学习嵌入表示的方式来进行联合学习。联合学习支持模型间的参数共享，从而使得原本分离的模型在合并后可以相互影响并一定程度的促进各自效果提升。在介绍具体细节之前，我们仍然先引入一些符号体系和重要概念。
 
 \subsection{符号体系和重要概念}
 
@@ -140,7 +144,9 @@ P(h|(r, t),{\theta_E, \theta_R}) = \frac{\exp(f_r(h, t))}{\sum_{h' \in E} \exp(f
 给定一个包含两个实体的句子，句子中的词以及句子本身的语义信息很大程度上可以揭开这两个实体间的关系，比如``马克·吐温出生于佛罗里达州''直接表明了\emph{马克·吐温}和\emph{佛罗里达州}是\emph{人与籍贯}的关系。Zeng、Toutanova以及Lin\cite{zeng2014relation,toutanova2015representing,lin2016neural}，他们在各自的工作中都开始尝试使用神经网络来挖掘这样的语义信息，并且将语义信息所描述的关系嵌入到低维空间中用来进行关系抽取。和他们的工作\cite{zeng2014relation,toutanova2015representing,lin2016neural}相似，我们也采用了卷积神经网络 CNN 对文本关系进行表示学习。其实对于文本来说，卷积神经网络并不是最好的，但却是效率最高的，这也是我们选择卷积神经网络而不是循环神经网络 RNN 的重要原因。
 
 
+\vspace{25pt}
 \begin{figure}[h]
+\setlength{\abovecaptionskip}{30pt} 
 \centering
 \includegraphics[width=0.9\columnwidth]{figures/ch3/cnn.jpg}
 \caption{基于知识注意力机制的卷积神经网络模型}
@@ -193,7 +199,9 @@ P((s, r_s)|{\theta_V}) = \frac{\exp(\mathbf{o}_{r_s})}{\sum_{r \in R} \exp(\math
 
 我们对一句话的理解不是割裂的，而是若干个语义小片段共同建立语义理解的，一个词如果不联系上下文是无法建立准确语义理解的。卷积层的主要物理意义就是在于对语言的局部语义采样，而窗口的大小就是上下文范围的大小。
 
+\vspace{25pt}
 \begin{figure}[h]
+\setlength{\abovecaptionskip}{30pt} 
 \centering
 \includegraphics[width=0.7\columnwidth]{figures/ch3/cnn_concrete.png}
 \caption{卷积层和池化层的结构示意图}
@@ -249,7 +257,9 @@ a_j  =\frac{\exp(\mathbf{r}_{ht}\cdot\mathbf{e}_j)}{\sum_{k = 1}^{m} \exp(\mathb
 
 \textbf{知识图谱。} 我们选用了 Freebase \cite{bollacker2008freebase} 来作为知识图谱这一块的数据来源。我们在引言中介绍过，Freebase 是一个被广泛利用的大规模知识图谱，并且对公众开放及提供数据下载。在我们的工作中，我们为实验环节引入了两个从 Freebase 中随机抽取的数据集合，包括 FB15K \footnote{https://everest.hds.utc.fr/doku.php?id=en:transe} 和 FB60K。FB15K 已经被很多工作采用并作为一个链接预测的标准测试集合长期存在。FB60K 是一个拓展自 Riedel \cite{riedel2010modeling} 发布的关系抽取文本的图谱数据集合，并且一直被用来进行作为关系抽取的标准数据。我们将 FB15K 和 FB60K 的数据集合详细细节罗列在表\ref{tab3:statistics-of-FB15K}中，包括实体数量、关系数量、事实三元组数量等等。
 
+\vspace{25pt}
 \begin{table}[htb]
+\setlength{\abovecaptionskip}{30pt} 
 \centering
 \caption{FB15K 与 FB60K 的数据细节}
 \begin{tabular}{|c|c|c|c|}
@@ -280,7 +290,9 @@ FB60K   & 1324           & 69512            & 335350 \\ \hline
 
 在我们的联合框架中，我们从$\{0.1, 0.01, 0.001\}$之中为知识图谱$P(G|{\theta_E,\theta_R})$选择学习率$\alpha_k$，从$\{0.1, 0.01, 0.001\}$之中为文本模型$P(D|{\theta_V})$选择学习率$\alpha_t$。对于卷积神经网络的滑动窗口，我们从$\{3,5,7\}$之中选择滑动窗口的尺寸大小$m$。由于其它的一些参数对于实验影响不是非常大，并且出于实验背景统一与公平的考量，我们直接使用了过去一系列工作\cite{zeng2014relation,lin2016neural}对于卷积神经网络的参数设定。同样是为了与之前的相关工作进行对比，词、实体、关系的嵌入维度$k_w$在关系抽取任务中被设定为$50$，而在图谱填充的链接预测任务中，嵌入维度被设定为$100$。在表\ref{tab3:parameters}中我们罗列了实验中所有的参数细节。
 
+\vspace{25pt}
 \begin{table}[h]
+\setlength{\abovecaptionskip}{30pt} 
 \centering
 \caption{联合学习框架参数设置}
 \begin{tabular}{|cr|}
@@ -312,7 +324,7 @@ FB60K   & 1324           & 69512            & 335350 \\ \hline
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1\columnwidth]{figures/ch3/res.eps}
+\includegraphics[width=0.9\columnwidth]{figures/ch3/res.eps}
 \caption{JointD+KATT、JointE+KATT、CNN+ATT、CNN+ONE、MIML、MultiR、Mintz 与 Sm2r 的准确率/召回率曲线}
 \label{fig3:jointcnn}
 \end{figure} 
@@ -325,7 +337,9 @@ FB60K   & 1324           & 69512            & 335350 \\ \hline
 
 （3）尽管基于统计的模型准确率都下降的非常快，尤其是与一系列神经网络模型相对比。但是在最高置信度的推荐中，即从$0$开始的一段召回率上，这些模型同样能够得到非常不错的准确率。这说明了，虽然人为设计的特征在某些方面存在局限性，但还是十分有效的。统计模型的主要优势在于其计算规模往往很小，且不需要过多的训练数据，但是有效特征需要人为构建与挑选。这些统计模型训练难度比基于神经网络的模型要简单的多，将两者进行结合并用于我们的工作，将是未来我们继续改进的一个重要方向。
 
+\vspace{25pt}
 \begin{table*}[h]
+\setlength{\abovecaptionskip}{30pt} 
 \centering
 \caption{不同模型组合情况下的 P@N 评估结果(\%).}
 \begin{tabular}{|c|ccc|ccc|} 
@@ -380,7 +394,9 @@ Bordes\cite{bordes2013translating} 在其工作中将知识图谱中的关系划
 为了进一步论证我们联合框架的有效性，我们也通过关系级别的平均 Hits@10 准确率来刻画模型整体的效果。在关系级别的平均准确率上，Prob-TransE 与 JointE 的结果分别为$\textbf{66.2\%}$和$\textbf{80.4\%}$。Prob-TransD 和 JointD 的结果分别为$\textbf{71.4\%}$和$\textbf{85.1\%}$。
 
 
+\vspace{25pt}
 \begin{table*}[h]
+\setlength{\abovecaptionskip}{30pt} 
 \centering
 \caption{头尾实体链接预测的结果(\%).}
 \scalebox{0.90}{
