@@ -4,13 +4,14 @@ The top-level auxiliary file: main.aux
 A level-1 auxiliary file: data/chap01.aux
 A level-1 auxiliary file: data/chap02.aux
 A level-1 auxiliary file: data/chap03.aux
+A level-1 auxiliary file: data/chap04.aux
 The style file: thuthesis.bst
 A level-1 auxiliary file: data/ack.aux
 Database file #1: ref/refs.bib
 Warning--empty journal in Abadi2016TensorFlow
 You've used 46 entries,
             2299 wiz_defined-function locations,
-            699 strings with 10955 characters,
+            700 strings with 10970 characters,
 and the built_in function-call counts, 23252 in all, are:
 = -- 2248
 > -- 693

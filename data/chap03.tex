@@ -262,11 +262,15 @@ a_j  =\frac{\exp(\mathbf{r}_{ht}\cdot\mathbf{e}_j)}{\sum_{k = 1}^{m} \exp(\mathb
 \setlength{\abovecaptionskip}{30pt} 
 \centering
 \caption{FB15K 与 FB60K 的数据细节}
-\begin{tabular}{|c|c|c|c|}
-\hline
-数据集合 & 关系 & 实体 & 三元组 \\ \hline
-FB15K   & 1345           & 14951            & 592213 \\ \hline
-FB60K   & 1324           & 69512            & 335350 \\ \hline
+\begin{tabular}{cccc}
+      \toprule[1.5pt]
+
+数据集合 & 关系 & 实体 & 三元组 \\ 
+          \midrule[1pt]
+FB15K   & 1345           & 14951            & 592213 \\ 
+FB60K   & 1324           & 69512            & 335350 \\ 
+      \bottomrule[1.5pt]
+
 \end{tabular}
 \label{tab3:statistics-of-FB15K}
 \end{table}
@@ -295,24 +299,26 @@ FB60K   & 1324           & 69512            & 335350 \\ \hline
 \setlength{\abovecaptionskip}{30pt} 
 \centering
 \caption{联合学习框架参数设置}
-\begin{tabular}{|cr|}
-\hline
-\multicolumn{1}{|c|}{约束系数 $\lambda$}                & 0.0001 \\
-\multicolumn{1}{|c|}{知识图谱模型学习率 $\alpha_k$}        & 0.001 \\
-\multicolumn{1}{|c|}{文本模型学习率 $\alpha_t$}             & 0.01  \\
-\multicolumn{1}{|c|}{隐层向量维度 $k_c$}        & 230   \\
-\multicolumn{1}{|c|}{词、实体、关系嵌入维度 $k_w$} & 50    \\
-\multicolumn{1}{|c|}{位置向量维度 $k_p$}            & 5     \\
-\multicolumn{1}{|c|}{窗口尺寸 $m$}    & 3     \\
-\multicolumn{1}{|c|}{梯度传播中断概率 $p$}            & 0.5  \\
-\hline
+\begin{tabular}{cc}
+      \toprule[1.5pt]
+
+\multicolumn{1}{c}{约束系数 $\lambda$}                & 0.0001 \\
+\multicolumn{1}{c}{知识图谱模型学习率 $\alpha_k$}        & 0.001 \\
+\multicolumn{1}{c}{文本模型学习率 $\alpha_t$}             & 0.01  \\
+\multicolumn{1}{c}{隐层向量维度 $k_c$}        & 230   \\
+\multicolumn{1}{c}{词、实体、关系嵌入维度 $k_w$} & 50    \\
+\multicolumn{1}{c}{位置向量维度 $k_p$}            & 5     \\
+\multicolumn{1}{c}{窗口尺寸 $m$}    & 3     \\
+\multicolumn{1}{c}{梯度传播中断概率 $p$}            & 0.5  \\
+      \bottomrule[1.5pt]
+
 \end{tabular}
 \label{tab3:parameters}
 \end{table}
 
 
 
-\subsection{关系抽取实验结果}
+\subsection{关系抽取实验结果与分析}
 
 \subsubsection{测试结果}
 
@@ -342,18 +348,24 @@ FB60K   & 1324           & 69512            & 335350 \\ \hline
 \setlength{\abovecaptionskip}{30pt} 
 \centering
 \caption{不同模型组合情况下的 P@N 评估结果(\%).}
-\begin{tabular}{|c|ccc|ccc|} 
-\hline
-P@N(\%) & \multicolumn{3}{c|}{100}                                      & \multicolumn{3}{c|}{300} \\ \hline
-& \multicolumn{1}{c|}{ONE} & \multicolumn{1}{c|}{ATT} & KATT & \multicolumn{1}{c|}{ONE} & \multicolumn{1}{c|}{ATT} & KATT \\ \hline
-CNN+	& 67.3	& \textbf{76.2}	& -     & 58.1	& 59.8 	& -    \\ \cline{1-1}
-JointE+  & 67.5 	& 74.1	& 75.8  & 63.0 	& 63.2 	& 68.0  \\ \cline{1-1}  
-JointD+  & \textbf{68.5}    & 74.6  & \textbf{80.6}  & \textbf{67.0} & \textbf{67.3} & \textbf{68.7}  \\ \hline
-P@N(\%) & \multicolumn{3}{c|}{500}                                      & \multicolumn{3}{c|}{Mean} \\ \hline 
-& \multicolumn{1}{c|}{ONE} & \multicolumn{1}{c|}{ATT} & KATT & \multicolumn{1}{c|}{ONE} & \multicolumn{1}{c|}{ATT} & KATT \\ \hline
-CNN+	& 43.7	& 48.5			& -     & 56.4 	& 61.5 	& -     \\ \cline{1-1}
-JointE+  & 57.3 	& 59.3 	& 63.0  & 62.6 	& 65.5  & 68.9  \\ \cline{1-1}
-JointD+  & \textbf{58.6}    & \textbf{61.1}  & \textbf{63.7}  & \textbf{64.8}   & \textbf{67.7}    & \textbf{71.0}  \\ \hline
+\begin{tabular}{ccccccc} 
+\toprule[1.5pt]
+P@N(\%) & \multicolumn{3}{c}{100}                                      & \multicolumn{3}{c}{300} \\ 
+\midrule[1pt]
+& \multicolumn{1}{c}{ONE} & \multicolumn{1}{c}{ATT} & KATT & \multicolumn{1}{c}{ONE} & \multicolumn{1}{c}{ATT} & KATT \\
+\midrule[1pt]
+CNN+	& 67.3	& \textbf{76.2}	& -     & 58.1	& 59.8 	& -    \\ 
+JointE+  & 67.5 	& 74.1	& 75.8  & 63.0 	& 63.2 	& 68.0  \\ 
+JointD+  & \textbf{68.5}    & 74.6  & \textbf{80.6}  & \textbf{67.0} & \textbf{67.3} & \textbf{68.7}  \\ 
+\midrule[1pt]
+P@N(\%) & \multicolumn{3}{c}{500}                                      & \multicolumn{3}{c}{Mean} \\ 
+\midrule[1pt]
+& \multicolumn{1}{c}{ONE} & \multicolumn{1}{c}{ATT} & KATT & \multicolumn{1}{c}{ONE} & \multicolumn{1}{c}{ATT} & KATT \\ 
+\midrule[1pt]
+CNN+	& 43.7	& 48.5			& -     & 56.4 	& 61.5 	& -     \\ 
+JointE+  & 57.3 	& 59.3 	& 63.0  & 62.6 	& 65.5  & 68.9  \\ 
+JointD+  & \textbf{58.6}    & \textbf{61.1}  & \textbf{63.7}  & \textbf{64.8}   & \textbf{67.7}    & \textbf{71.0}  \\ 
+\bottomrule[1.5pt]
 \end{tabular}
 \label{tab3:relationExt}
 \end{table*}
@@ -381,7 +393,7 @@ JointD+  & \textbf{58.6}    & \textbf{61.1}  & \textbf{63.7}  & \textbf{64.8}   
 
 （4）ATT 和 KATT 的比较进一步表明，在跨句合并机制上，不使用知识图谱信息的简单注意力机制还是略显薄弱的。即使是含有相同关系的不同实体对，实体间的关系都有着细微的差别，这与我们在前文提到的实体多样性以及关系多样性有关。ATT 中通过一个模糊的全局向量来进行重要的句子选择，显然这是无法满足关系多样性的特性的。在这里，我们将知识图谱的信息融入到注意力机制中。对于不同的实体对，我们给出局部的向量来进行重点句子选择，而这些局部向量在全局上又密切相关。因此，我们基于知识的注意力机制比直接跨句的简单注意力机制更具有区分度与甄别能力。
 
-\subsection{图谱填充实验结果}
+\subsection{图谱填充实验结果与分析}
 
 针对实体的链接预测被广泛地使用在知识图谱填充任务中\cite{bordes2013translating,wang2014transh,lin2015learning}。在这里，我们的任务设置和章节\ref{cha2:framework}中链接预测是一致的，给定一个头实体和关系的组合$(h, r, ?)$来预测对应的尾实体，或者给定一个尾实体和关系的组合$(?, r ,t)$。
 
@@ -400,10 +412,14 @@ Bordes\cite{bordes2013translating} 在其工作中将知识图谱中的关系划
 \centering
 \caption{头尾实体链接预测的结果(\%).}
 \scalebox{0.90}{
-\begin{tabular}{|c|cccc|cccc|c|}
-\hline
-度量方法            & \multicolumn{4}{c|}{Predicting Head} & \multicolumn{4}{c|}{Predicting Tail} & \multicolumn{1}{c|}{Overall} \\ \hline
-类别  & 1-to-1     & 1-to-N    & N-to-1    & N-to-N    & 1-to-1     & 1-to-N    & N-to-1    & N-to-N  & Triple Avg. \\ \hline
+\begin{tabular}{cccccccccc}
+      \toprule[1.5pt]
+
+度量方法            & \multicolumn{4}{c}{Predicting Head} & \multicolumn{4}{c}{Predicting Tail} & \multicolumn{1}{c}{Overall} \\ 
+\midrule[1pt]
+类别  & 1-to-1     & 1-to-N    & N-to-1    & N-to-N    & 1-to-1     & 1-to-N    & N-to-1    & N-to-N  & Triple Avg. \\
+
+            \midrule[1pt]
 
 SE \cite{bordes2011learning}&35.6 &62.6 &17.2 &37.5 &34.9 &14.6 &68.3 &41.3 &39.8  \\ 
 SME \cite{bordes2012joint}&35.1 &69.6 &19.9 &40.3 &32.7 &14.9 &76.0 &43.3 &41.3  \\ 
@@ -412,15 +428,19 @@ TransH \cite{wang2014transh}    & 66.8       & 87.6      & 30.2      & 64.5     
 TransR \cite{lin2015learning}   & 78.8       & 89.2      & 38.1      & 66.9      & 79.2       & 38.4      &90.4      & 72.1    & 68.7  \\ 
 CTransR \cite{lin2015learning}    & 81.5      & 89.0      & 36.4      & 71.2      & 80.8       & 38.6      &90.1      & 73.8    & 70.2  \\ 
 
-TransD \cite{ji2015knowledge} &81.2  &94.8  &47.1 &79.3  &81.6 &53.9 &93.7 &82.5  &78.9  \\ \hline
+TransD \cite{ji2015knowledge} &81.2  &94.8  &47.1 &79.3  &81.6 &53.9 &93.7 &82.5  &78.9  \\ 
+\midrule[1pt]
 
 
 Prob-TransE      & 66.5       & 88.8      & 39.8      & 79.0      & 66.4       & 51.9      & 85.6      & 81.5    & 76.6  \\
-JointE     &82.7 & \textbf{96.2} &45.0 &80.7 &81.7& 57.7 & 93.6 &84.0 & 79.3  \\ \hline
+JointE     &82.7 & \textbf{96.2} &45.0 &80.7 &81.7& 57.7 & 93.6 &84.0 & 79.3  \\ 
+\midrule[1pt]
 
 Prob-TransD		&79.1	&93.0 &42.2	&79.2	&79.2	&51.6	&90.9	&82.7	&78.2  \\  
 
-JointD    &\textbf{82.7}   &95.2 &\textbf{47.8} & \textbf{81.6} &\textbf{82.0} &\textbf{57.9} & \textbf{94.7} &\textbf{84.7} & \textbf{80.4}  \\ \hline
+JointD    &\textbf{82.7}   &95.2 &\textbf{47.8} & \textbf{81.6} &\textbf{82.0} &\textbf{57.9} & \textbf{94.7} &\textbf{84.7} & \textbf{80.4}  \\ 
+      \bottomrule[1.5pt]
+
 \end{tabular}}
 \label{tab3:entity}
 \end{table*}

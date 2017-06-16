@@ -302,11 +302,13 @@ S(h, r, t) = \lVert \textbf{h}_r + \textbf{r} - \textbf{t}_r \rVert_{L1/L2}
 \centering
 \caption{FB15K 和 WN18 的数据细节}
 \scalebox{1.0}{
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-数据集合 & 关系 & 实体 & 训练集 & 验证集 & 测试集 \\ \hline
-FB15K   & 1345           & 14951            & 483142 &50000 &59071 \\ \hline
-WN18   & 18           & 40943            & 141442  &5000 &5000 \\ \hline
+\begin{tabular}{cccccc}
+      \toprule[1.5pt]
+数据集合 & 关系 & 实体 & 训练集 & 验证集 & 测试集 \\ 
+      \midrule[1pt]
+FB15K   & 1345           & 14951            & 483142 &50000 &59071 \\ 
+WN18   & 18           & 40943            & 141442  &5000 &5000 \\ 
+      \bottomrule[1.5pt]
 \end{tabular}}
 \label{tab2:statistics-of-FB15K}
 \end{table}
@@ -340,30 +342,35 @@ WN18   & 18           & 40943            & 141442  &5000 &5000 \\ \hline
   % \fontsize{7}{9}\selectfont  
   \label{tab2:performance_comparison1}  
   \scalebox{0.8}{
-    \begin{tabular}{|c|c c|c c|c|c c|c c|c|}  
-    \hline    
-    数据集合&\multicolumn{5}{c|}{WN18}&\multicolumn{5}{c|}{FB15K}\\\cline{1-11}
+    \begin{tabular}{cc cc ccc cc cc}  
+      \toprule[1.5pt]
+
+    数据集合&\multicolumn{5}{c}{WN18}&\multicolumn{5}{c}{FB15K}\\  
+          \midrule[1pt]
+
+    % \cline{1-11}
     \multirow{2}{*}{度量方法}&
-    \multicolumn{2}{c|}{Mean Rank}&
-    \multicolumn{2}{c|}{Hits@10(\%)}&
+    \multicolumn{2}{c}{Mean Rank}&
+    \multicolumn{2}{c}{Hits@10(\%)}&
     \multirow{2}{*}{训练时间(s)}&
-    \multicolumn{2}{c|}{Mean Rank}&
-    \multicolumn{2}{c|}{Hits@10(\%)}&
+    \multicolumn{2}{c}{Mean Rank}&
+    \multicolumn{2}{c}{Hits@10(\%)}&
     \multirow{2}{*}{训练时间(s)}
     \cr
     {}&Raw&Filter&Raw&Filter&{}&Raw&Filter&Raw&Filter&{}\cr
-    \hline
-  
+    
+            \midrule[1pt]
+
     TransE(KB2E)&251&239&78.9&89.8&1674&210&82&41.9&61.3&3587\cr
     TransE(OpenKE)&273&261&71.5&83.3&12&205&69&43.8&63.5&42\cr
-    TransE&263&251&75.4&89.2&-&243&125&34.9&47.1&-\cr\hline      
+    TransE&263&251&75.4&89.2&-&243&125&34.9&47.1&-\cr
     TransH(OpenKE)&285&272&79.8&92.5&121&202&67&43.7&63.0&178\cr  
-    TransH&318&303&75.4&86.7&-&221&84&42.5&58.5&-\cr\hline         
+    TransH&318&303&75.4&86.7&-&221&84&42.5&58.5&-\cr
     TransR(OpenKE)&284&271&81.0&94.6&296&196&73&48.8&69.8&1572\cr
-    TransR&232&219&78.3&91.7&-&198&77&48.2&68.7&-\cr\hline      
+    TransR&232&219&78.3&91.7&-&198&77&48.2&68.7&-\cr
     TransD(OpenKE)&309&297&78.5&91.9&201&236&95&49.9&75.2&231\cr 
-    TransD&224&212&79.6&92.2&-&194&91&53.4&77.3&-\cr\hline   
-
+    TransD&224&212&79.6&92.2&-&194&91&53.4&77.3&-\cr  
+    \bottomrule[1.5pt]
     \end{tabular}}  
 \end{table*}
 

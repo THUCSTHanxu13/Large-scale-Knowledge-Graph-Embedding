@@ -289,6 +289,8 @@ INPUT data/chap02.aux
 INPUT data/chap02.aux
 INPUT data/chap03.aux
 INPUT data/chap03.aux
+INPUT data/chap04.aux
+INPUT data/chap04.aux
 INPUT data/ack.aux
 INPUT data/ack.aux
 OUTPUT main.aux
@@ -472,6 +474,9 @@ INPUT figures/ch3/res.eps
 INPUT figures/ch3/res.eps
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
+OUTPUT data/chap04.aux
+INPUT data/chap04.tex
+INPUT data/chap04.tex
 INPUT main.lof
 INPUT main.lof
 OUTPUT main.lof
@@ -513,5 +518,7 @@ INPUT data/chap02.aux
 INPUT data/chap02.aux
 INPUT data/chap03.aux
 INPUT data/chap03.aux
+INPUT data/chap04.aux
+INPUT data/chap04.aux
 INPUT data/ack.aux
 INPUT data/ack.aux
